@@ -34,16 +34,7 @@ public class CtrlLogin extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
             response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        int bnd = Integer.parseInt(request.getParameter("bnd"));
-        
-        switch (bnd) {
-            case 1:
-                out.print(login(request));
-                break;
-            
-
-        }
+   
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -73,6 +64,17 @@ public class CtrlLogin extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+             PrintWriter out = response.getWriter();
+              response.setContentType("text/html;charset=UTF-8");
+        int bnd = Integer.parseInt(request.getParameter("bnd"));
+        
+        switch (bnd) {
+            case 1:
+                out.print(login(request));
+                break;
+            
+
+        }
     }
 
     /**
