@@ -28,11 +28,10 @@
         <link href="<%= request.getContextPath()%>/libs/bootstrap-5.0.2-dist(1)/bootstrap-5.0.2-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <script src="<%= request.getContextPath()%>/libs/bootstrap-5.0.2-dist(1)/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js" type="text/javascript"></script>
         <link href="<%= request.getContextPath()%>/images/fontawesome-free-6.4.2-web/fontawesome-free-6.4.2-web/css/all.min.css" rel="stylesheet" type="text/css"/>
-        <script src="<%= request.getContextPath()%>/ControllerJs/ManejadorVentanasGenerales.js" type="text/javascript"></script>
-        <link href="<%= request.getContextPath()%>/css/PPrincipal.css" rel="stylesheet" type="text/css"/>
-        <!--<script src="utils/utils.js" type="text/javascript"></script>-->
+        <script src="<%= request.getContextPath()%>/ControllerJs/LoginControllerJs.js" type="text/javascript"></script>
 
-        <script src="<%= request.getContextPath()%>/ControllerJs/CursosControllerJs.js" type="text/javascript"></script>
+
+        
         <script src="<%= request.getContextPath()%>/ControllerJs/Utils.js" type="text/javascript"></script>
 
 
@@ -63,6 +62,7 @@
                                 <input type="password"  class="form-control form-control-lg"
                                        placeholder="Ingresa tu contraseña" id="txtPw" />
                                 <!--<label class="form-label" for="form3Example4">Contraseña</label>-->
+                                <!--cambio de barra -->
                             </div>
 
                             <div class="d-flex justify-content-between align-items-center">
