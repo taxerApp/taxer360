@@ -73,7 +73,7 @@ public class CtrlLogin extends HttpServlet {
                 out.print(login(request));
                 break;
             
-
+  
         }
     }
 
