@@ -28,64 +28,27 @@
         <link href="<%= request.getContextPath()%>/libs/bootstrap-5.0.2-dist(1)/bootstrap-5.0.2-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <script src="<%= request.getContextPath()%>/libs/bootstrap-5.0.2-dist(1)/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js" type="text/javascript"></script>
         <link href="<%= request.getContextPath()%>/images/fontawesome-free-6.4.2-web/fontawesome-free-6.4.2-web/css/all.min.css" rel="stylesheet" type="text/css"/>
-        <script src="<%= request.getContextPath()%>/ControllerJs/LoginControllerJs.js" type="text/javascript"></script>
-
-
-        
+        <script src="<%= request.getContextPath()%>/ControllerJs/LoginControllerJs.js" type="text/javascript"></script>   
         <script src="<%= request.getContextPath()%>/ControllerJs/Utils.js" type="text/javascript"></script>
+        <link href="css/cascada.css" rel="stylesheet" type="text/css"/>
 
 
     </head>
     <body>
-        <section class="vh-100">
-            <div class="container-fluid h-custom">
-                <div class="row d-flex justify-content-center align-items-center h-100">
-                    <div class="col-md-9 col-lg-6 col-xl-5">
-                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
-                             class="img-fluid" alt="Sample image">
-                    </div>
-                    <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-                        <label id="lblTituloLogin">Inicio de sesión de la cuenta</label><br>
-                        <label id="lblLeyendaLogin">Inicia sesión en tu cuenta para acceder a tu perfil, historial y cualquier página privada a la que te hayan otorgado acceso.</label>
-                        <br><br>
-                        <form>
-                            
-
-                            <!-- Email input -->
-                            <div class="form-outline mb-4">
-                                <input type="email" class="form-control form-control-lg"
-                                       placeholder="Ingresa tu nombre de usuario" id="txtUsuario"/>
-                                <!--<label class="form-label" for="form3Example3">Correo Electronico</label>-->
-                            </div>
-                            <!-- Password input -->
-                            <div class="form-outline mb-3">
-                                <input type="password"  class="form-control form-control-lg"
-                                       placeholder="Ingresa tu contraseña" id="txtPw" />
-                                <!--<label class="form-label" for="form3Example4">Contraseña</label>-->
-                                <!--cambio de barra -->
-                            </div>
-
-                            <div class="d-flex justify-content-between align-items-center">
-
-
-                                <a href="#!" class="text-body">¿Olvidaste tu contraseña?</a>
-                            </div>
-
-                            <div class="text-center text-lg-start mt-4 pt-2" style="margin-bottom: 20%">
-                                <button type="button" class="btn btn-primary btn-lg"
-                                        style="padding-left: 2.5rem; padding-right: 2.5rem;" id="btnLogin">Login</button>
-                                <p class="small fw-bold mt-2 pt-1 mb-0">No tienes una cuenta? <label 
-                                        class="link-danger" id="lnkCrearCuenta">Crear Cuenta</label></p>
-                            </div>
-
-                        </form>
-                    </div>
-                </div>
-            </div >
-
-
-            <!--  -->
-        </section>
+                <div class="container-fluid h-custom"></div>
+            <div class="row d-flex justify-content-center align-items-center h-100"></div>
+                <div class="col-md-9 col-lg-6 col-xl-5"></div>
+            <img src="img/BEOK_1.png"
+                             class="img-fluid" alt="Sample image">   </div>
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1"></div>
+            <section class="form-login">
+            <h5> Bienvenid@ </h5>
+            <input class="controls" type="text" name="usuario" id="txtCorreo" value="" placeholder="Nombre de usario">
+            <input class="controls" type="password" name="contrasena" id="txtPw" value="" placeholder="Contraseña">
+            <input class="buttons" type="button" name="" id="btnLogin" value="INICIAR SESION">
+    
+                   
+        </section>   
 
     </body>
 </html>
