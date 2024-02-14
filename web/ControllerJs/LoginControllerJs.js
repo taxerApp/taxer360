@@ -8,11 +8,11 @@ $(document).ready(function () {
 
   
 $(document).on("click", "#btnLogin", function (e) {
-  
-    var usuario = $("#txtUsuario").val();
+    alert("moca");
+    var correo = $("#txtCorreo").val();
     var pw = $("#txtPw").val();
 
-     if(usuario.trim() ==="" || pw.trim()=== ""){
+     if(correo.trim() ==="" || pw.trim()=== ""){
          alert("Todos los campos son obligatorios");
          
      }else {
@@ -21,7 +21,7 @@ $(document).on("click", "#btnLogin", function (e) {
             type: 'POST',
             url: 'CtrlLogin',
             data: {
-                usuario: usuario,
+                usuario: correo,
                 pw:pw,
                 bnd: 1
             },
@@ -29,7 +29,7 @@ $(document).on("click", "#btnLogin", function (e) {
 //                   $("#overlay").fadeOut();
             if(data === 'true'){
               
-                   if (window.location = "Inicio/Sesion.jsp") {
+                   if (window.location = "Sesion.jsp") {
 
                     }
             }else{
