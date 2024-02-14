@@ -11,8 +11,10 @@ package Dto;
  */
 public class Usuario {
     private int id;
-    private String correo;
-    private String contasenia;
+    private String nombreDeUsuario;
+    private String tipoUsuario;
+    private int status;
+    
 
     
     public Usuario(){
@@ -27,22 +29,31 @@ public class Usuario {
         this.id = id;
     }
 
-    public String getCorreo() {
-        return correo;
+    public String getNombreDeUsuario() {
+        return nombreDeUsuario;
     }
 
-    public void setCorreo(String correo) {
-        this.correo = correo;
+    public void setNombreDeUsuario(String nombreDeUsuario) {
+        this.nombreDeUsuario = nombreDeUsuario;
     }
 
-    public String getContasenia() {
-        return contasenia;
+    public String getTipoUsuario() {
+        return tipoUsuario;
     }
 
-    public void setContasenia(String contasenia) {
-        this.contasenia = contasenia;
+    public void setTipoUsuario(String tipoUsuario) {
+        this.tipoUsuario = tipoUsuario;
     }
 
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    
    
   
     

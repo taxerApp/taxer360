@@ -15,7 +15,7 @@ public class Variables {
 //    public static String usuario="root";
 //    public static String password="";
     
-      public static String servidor="jdbc:mysql://dgsystemas.com:3306/cursos?useServerPrepStmts=true";
-    public static String usuario="dgsystemas";
-    public static String password="dgsystemas";
+    public static String servidor="jdbc:mysql://198.244.159.88:3306/proyecto360?useServerPrepStmts=true";
+    public static String usuario="taxerApp";
+    public static String password="Taxer2003";
 }

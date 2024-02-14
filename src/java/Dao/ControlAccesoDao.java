@@ -52,7 +52,7 @@ public class ControlAccesoDao extends Conexion {
              
                    
                 objUsuario.setId(rs.getInt("id"));
-                objUsuario.setCorreo(rs.getString("correo"));
+                objUsuario.setNombreDeUsuario(rs.getString("NombreDeUsuario"));
                
 
                   
