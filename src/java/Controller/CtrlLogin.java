@@ -97,12 +97,12 @@ public class CtrlLogin extends HttpServlet {
         HttpSession session = request.getSession();
         session.setAttribute("usuario", usu);
         
-        if(usu.getCorreo()!= null && !usu.getCorreo().equals("")){
+        if(usu.getNombreDeUsuario()!= null && !usu.getNombreDeUsuario().equals("")){
             usuarioValido = true;
         }else{
             usuarioValido= false;
         }
-        System.out.println("usuario ::: "+usu.getCorreo());
+        System.out.println("usuario ::: "+usu.getNombreDeUsuario());
             return usuarioValido;
     }
 
