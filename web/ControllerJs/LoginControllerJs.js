@@ -8,7 +8,7 @@ $(document).ready(function () {
 
   
 $(document).on("click", "#btnLogin", function (e) {
-    alert("moca");
+//    alert("moca");
     var correo = $("#txtCorreo").val();
     var pw = $("#txtPw").val();
 
@@ -28,7 +28,7 @@ $(document).on("click", "#btnLogin", function (e) {
             success: function (data) {
 //                   $("#overlay").fadeOut();
             if(data === 'true'){
-              
+              alert("Usuario Valido")
                    if (window.location = "Sesion.jsp") {
 
                     }
