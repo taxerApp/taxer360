@@ -32,7 +32,8 @@
         <script src="<%= request.getContextPath()%>/ControllerJs/LoginControllerJs.js" type="text/javascript"></script>   
         <script src="<%= request.getContextPath()%>/ControllerJs/Utils.js" type="text/javascript"></script>
         <script src="<%= request.getContextPath()%>/Js/ManejadorVentanas.js" type="text/javascript"></script>
-
+        <link href="<%= request.getContextPath()%>/css/loading.css" rel="stylesheet" type="text/css"/>
+        
         <!--estilos de contenedor de sesion-->
         <link href="<%= request.getContextPath()%>/css/Sesion.css" rel="stylesheet" type="text/css"/>
 
@@ -71,6 +72,13 @@
 
     <body>
         <div id="dvMenu"><%@include file="Vista/MenuSesion.jsp" %></div>
+        <!--indicador de  cargando-->
+           <div id="overlay">
+    <div class="cv-spinner"><label>Espera un momento ...<br></label> 
+    <span class="spinner"></span>
+  </div>
+</div>
+        <!--fin indicador de cargando-->
         <div id="dvContenedorSesion"><%@include file="Sesion/frmHome.jsp" %></div>
     </body>
     <%}%>

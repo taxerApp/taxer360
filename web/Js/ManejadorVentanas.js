@@ -14,7 +14,7 @@ $(document).on("click", "#frmHome", function () {
 });
 
 $(document).on("click", "#btnModalPrueba", function () {
-    alert();
+     
     wndPRueba();
 
 });
@@ -23,7 +23,7 @@ $(document).on("click", "#btnModalPrueba", function () {
 //esto es para crear modales y debe ir en el controllerJs del jsp a utilizar
 function wndPRueba() {
 
-
+ $("#overlay").fadeIn();
     $("#wndReporteIndividual").dialog({
         width: '90%',
 //        height:'auto', 
@@ -38,7 +38,7 @@ function wndPRueba() {
         open: function (event, ui) {
             $('#wndReporteIndividual').load("PruebaGraficas.jsp", function () {
 //                   esta funcion se ejecuta cuando se termino de realizar la carga de la modal
-
+ $("#overlay").fadeOut();
             });
         },
 

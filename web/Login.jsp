@@ -31,10 +31,18 @@
         <script src="<%= request.getContextPath()%>/ControllerJs/LoginControllerJs.js" type="text/javascript"></script>   
         <script src="<%= request.getContextPath()%>/ControllerJs/Utils.js" type="text/javascript"></script>
         <link href="css/cascada.css" rel="stylesheet" type="text/css"/>
-
+        <link href="<%= request.getContextPath()%>/css/loading.css" rel="stylesheet" type="text/css"/>
 
     </head>
     <body>
+
+        <!--indicador de  cargando-->
+           <div id="overlay">
+    <div class="cv-spinner"><label>Espera un momento ...<br></label> 
+    <span class="spinner"></span>
+  </div>
+</div>
+        <!--fin indicador de cargando-->
                 <div class="container-fluid h-custom"></div>
             <div class="row d-flex justify-content-center align-items-center h-100"></div>
                 <div class="col-md-9 col-lg-6 col-xl-5"></div>

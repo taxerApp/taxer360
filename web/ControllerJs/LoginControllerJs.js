@@ -16,7 +16,7 @@ $(document).on("click", "#btnLogin", function (e) {
          alert("Todos los campos son obligatorios");
          
      }else {
-//          $("#overlay").fadeIn();
+          $("#overlay").fadeIn();
         $.ajax({
             type: 'POST',
             url: 'CtrlLogin',
@@ -26,7 +26,7 @@ $(document).on("click", "#btnLogin", function (e) {
                 bnd: 1
             },
             success: function (data) {
-//                   $("#overlay").fadeOut();
+                   $("#overlay").fadeOut();
             if(data === 'true'){
               alert("Usuario Valido")
                    if (window.location = "Sesion.jsp") {
@@ -41,7 +41,7 @@ $(document).on("click", "#btnLogin", function (e) {
             error: function (data) {
             $("#overlay").fadeOut();
                 //   mensajeError(data)
-//                     $("#overlay").fadeOut();
+                     $("#overlay").fadeOut();
             }
         });
     }
