@@ -3,11 +3,11 @@
     Author     : Jimmy
 */
 img{
- width: 90%;
+ width: 100%;
 }
 p{
- width: 90%; 
- font-size: .8rem;
+ width: 100%; 
+ font-size: 1rem;
  text-justify: distribute;
 }
 table{

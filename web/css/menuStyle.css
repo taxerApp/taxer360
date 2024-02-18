@@ -5,7 +5,9 @@
 body {
   margin: 0;
   font-family: 'Signika Negative', sans-serif;
-  background-color: #F5F5F5;
+  /*background-color: #F5F5F5;*/
+  background-color: white;
+  
 }
 
 
@@ -14,10 +16,12 @@ body {
 ****************************/
 .header {
   width: 100%;
-  background-color: #fff;
+  background-color: #F5F5F5;
+  
 }
 .header a {
   text-decoration: none;
+  color: #ffca2c;;
 }
 .child-header {
   max-width: 1400px;
@@ -68,10 +72,10 @@ body {
 
 /* hover */
 .item-menu-link:hover {
-  color: #d92626;
+  color: #003eff;
 }
 .item-menu-sub-menu:hover i {
-  color: #d92626;
+  color: #003eff;
   transition: .3s linear;
 }
 
@@ -126,7 +130,10 @@ body {
 
 
 
-
+ .txtEncabezado{
+      color:#ffca2c;
+       font-size: 14px;
+  }
 
 @media screen and (max-width: 980px) {
   /* boton hamburguesa
@@ -197,4 +204,7 @@ body {
   .item-menu-sub-menu:hover i {
     color: initial;
   }
+  
+  
+ 
 }
