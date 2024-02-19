@@ -47,23 +47,25 @@
                            <li class="item-menu item-menu-sub-menu">
                             <a href="#"  class="item-menu-link" id="<%=lstMenu.get(i).getIdPantalla()%>"><%=lstMenu.get(i).getNombreMenu()%></a>
                       <%
-                        SubMenuDto objSubMenu=  dao.getSubMenu(lstMenu.get(i).getId());
-                        if(objSubMenu!=null){
-                      if(objSubMenu.getNombreSubMenu()!=null){
+                          
+                        List<SubMenuDto> lstSubMenu=  dao.getSubMenu(lstMenu.get(i).getId());
+                       %>
+<!--                        <i class="fas fa-angle-down angle-view-sub-menu" style="color: #ffca2c;"></i>
+                            <i class="fas fa-angle-down angle-view-sub-menu"></i>-->
+                          <ul class="sub-menu" id="sub-menu">
+                            <%  for(int j=0;j<lstSubMenu.size();j++){
+                    System.out.println("nombre subMenu "+lstSubMenu.get(j).getNombreSubMenu()+" del menu con id "+lstMenu.get(i).getId());
                           
                       
                       %>
-                         <i class="fas fa-angle-down angle-view-sub-menu" style="color: #ffca2c;"></i>
-                            <i class="fas fa-angle-down angle-view-sub-menu"></i>
-                             <ul class="sub-menu" id="sub-menu">
+
                                 <li class="item-menu">
-                                    <a href="#" class="item-menu-link" id="<%=objSubMenu.getIdPantalla()%>"><%=objSubMenu.getNombreSubMenu()%></a>
+                                    <a href="#" class="item-menu-link" id="<%=lstSubMenu.get(j).getIdPantalla()%>"><%=lstSubMenu.get(j).getNombreSubMenu()%></a>
                                 </li>
-                               
-                            </ul>
-                      <%  }}
+  
+                      <%  }
                       %>
-                           
+                          </ul> 
                            </li>  
                         <%}%>
 <!--                        <li class="item-menu">

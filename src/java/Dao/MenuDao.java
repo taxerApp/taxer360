@@ -9,6 +9,7 @@ import Conexion.Conexion;
 import Dto.MenuDto;
 import Dto.SubMenuDto;
 import Dto.Usuario;
+import com.sun.javafx.scene.control.skin.VirtualFlow;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -82,8 +83,8 @@ public class MenuDao extends Conexion{
 
     }
    
-     public SubMenuDto getSubMenu(int idMenuPadre) {
-        SubMenuDto objSubMenu = new SubMenuDto();
+     public List<SubMenuDto> getSubMenu(int idMenuPadre) {
+       List<SubMenuDto> lstSubMenu = new ArrayList<SubMenuDto>();
         Connection Cn = getConexion();
         CallableStatement ps = null;
         ResultSet rs = null;
@@ -98,12 +99,13 @@ public class MenuDao extends Conexion{
                 rs = ps.getResultSet();
 
                 while (rs.next()) {
+                     SubMenuDto objSubMenu = new SubMenuDto();
              objSubMenu.setIdPantalla(rs.getString("idPantalla"));
              objSubMenu.setNombreSubMenu(rs.getString("nombreSubMenu"));
              objSubMenu.setIdMenuPadre(rs.getInt("idMenuPadre"));
              objSubMenu.setOrden(rs.getInt("orden"));
                    
-             
+             lstSubMenu.add(objSubMenu);
                
 
                   
@@ -130,7 +132,7 @@ public class MenuDao extends Conexion{
                 Logger.getLogger(ControlAccesoDao.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        return objSubMenu;
+        return lstSubMenu;
 
     }
 }

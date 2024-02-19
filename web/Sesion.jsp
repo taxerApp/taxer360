@@ -71,7 +71,7 @@
     <%} else {%>
 
     <body>
-        <div id="dvMenu" style="width: 90%; margin-left: 5%; margin-right: 5%;"><%@include file="Generales/MenuSesion.jsp" %></div>
+        <div id="dvMenu" style="width: 100%; padding-left: 5%; padding-right: 5%; background: #F5F5F5;"><%@include file="Generales/MenuSesion.jsp" %></div>
         <!--indicador de  cargando-->
            <div id="overlay">
     <div class="cv-spinner"><label>Espera un momento ...<br></label> 
