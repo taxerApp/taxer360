@@ -4,6 +4,11 @@
     Author     : David
 --%>
 
+<%@page import="Dto.SubMenuDto"%>
+<%@page import="Dto.Usuario"%>
+<%@page import="Dto.MenuDto"%>
+<%@page import="java.util.List"%>
+<%@page import="Dao.MenuDao"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -18,20 +23,50 @@
 
         <link href="<%= request.getContextPath()%>/css/menuStyle.css" rel="stylesheet" type="text/css"/>
     </head>
+    <%
+       Usuario usuSesion = (Usuario)  session.getAttribute("usuario");  
+        
+    MenuDao dao = new MenuDao();
+    List<MenuDto> lstMenu =dao.geMenu(usuSesion.getId());
+    
+    %>
     <body>
         <header class="header">
             <div class="child-header">
-                <!--<div class="box-logo">-->
+               
                 <div class="box-logo">
-                    <!--<label>Evaluación 360</label><br>-->
-                    <label class="txtEncabezado">Bienvenid@: David Jimenez</label><br>
-                    <label class="txtEncabezado" >Administrador Be-Learning</label>
-                    <!--<a href="" class="link-logo">Evaluacion 360</a>-->
+           
+                    <label class="txtEncabezado">Bienvenid@: <%= usuSesion.getNombreDeUsuario() %></label><br>
+                    <label class="txtEncabezado" ><%= usuSesion.getTipoUsuario()%></label>
+                  
                 </div>
 
                 <nav class="box-menu-navegacion" id="menu-navegacion">
                     <ul class="menu-navegacion">
-                        <li class="item-menu">
+                        <% for(int i=0;i<lstMenu.size();i++){%>
+                           <li class="item-menu item-menu-sub-menu">
+                            <a href="#"  class="item-menu-link" id="<%=lstMenu.get(i).getIdPantalla()%>"><%=lstMenu.get(i).getNombreMenu()%></a>
+                      <%
+                        SubMenuDto objSubMenu=  dao.getSubMenu(lstMenu.get(i).getId());
+                        if(objSubMenu!=null){
+                      if(objSubMenu.getNombreSubMenu()!=null){
+                          
+                      
+                      %>
+                         <i class="fas fa-angle-down angle-view-sub-menu" style="color: #ffca2c;"></i>
+                            <i class="fas fa-angle-down angle-view-sub-menu"></i>
+                             <ul class="sub-menu" id="sub-menu">
+                                <li class="item-menu">
+                                    <a href="#" class="item-menu-link" id="<%=objSubMenu.getIdPantalla()%>"><%=objSubMenu.getNombreSubMenu()%></a>
+                                </li>
+                               
+                            </ul>
+                      <%  }}
+                      %>
+                           
+                           </li>  
+                        <%}%>
+<!--                        <li class="item-menu">
                             <a href="#" class="item-menu-link">Inicio</a>
                         </li>
                         <li class="item-menu">
@@ -58,7 +93,7 @@
                         <li class="item-menu item-menu-sub-menu">
                             <a href="#" class="item-menu-link">Servicios</a>
                             <i class="fas fa-angle-down angle-view-sub-menu" style="color: #ffca2c;"></i>
-                            <!--<i class="fas fa-angle-down angle-view-sub-menu"></i>-->
+                            <i class="fas fa-angle-down angle-view-sub-menu"></i>
 
                             <ul class="sub-menu" id="sub-menu">
                                 <li class="item-menu">
@@ -81,7 +116,7 @@
 
                         <li class="item-menu">
                             <a href="#" class="item-menu-link">Contacto</a>
-                        </li>
+                        </li>-->
                     </ul>
                 </nav>
 

@@ -12,7 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Este es el home</h1>
+        <h1 style="width: 100%; background: red;">Este es el home</h1>
         <input type="button" value="Probar modal" id="btnModalPrueba">
     </body>
 </html>
