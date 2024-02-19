@@ -3,16 +3,44 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+//ventana home
 $(document).on("click", "#frmHome", function () {
-
-
-    $("#dvContenedorHome").load('Sesion/frmHome.jsp');
-
-
-
+    
+ $("#dvContenedorSesion").load('Sesion/frmHome.jsp');
 });
 
+//fin ventana home
+//
+//ventanas empresa
+$(document).on("click", "#frmRegistrarEmpresa", function () {
+    
+ $("#dvContenedorSesion").load('Sesion/Empresa/frmRegistrarEmpresa.jsp');
+});
+
+$(document).on("click", "#frmConsultarEmpresa", function () {
+      
+ $("#dvContenedorSesion").load('Sesion/Empresa/frmConsultarEmpresa.jsp');
+});
+//fin ventanas empresa
+// ventanas para colaboradores
+$(document).on("click", "#frmConsultarColaboradores", function () {
+      
+ $("#dvContenedorSesion").load('Sesion/Colaboradores/frmConsultarColaboradores.jsp');
+});
+
+//fin ventanas de Evaluacion
+
+$(document).on("click", "#frmCrearEvaluacion", function () {
+   
+ $("#dvContenedorSesion").load('Sesion/Evaluacion/frmCrearEvaluacion.jsp');
+});
+
+$(document).on("click", "#frmConsultarEvaluaciones", function () {
+      
+ $("#dvContenedorSesion").load('Sesion/Evaluacion/frmConsultarEvaluaciones.jsp');
+});
+
+//fin ventanas Evaluacion
 $(document).on("click", "#btnModalPrueba", function () {
      
     wndPRueba();

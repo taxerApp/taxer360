@@ -18,7 +18,7 @@
         <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js" type="text/javascript"></script>
         <script src="<%= request.getContextPath()%>/libs/jquery/jquery-3.7.1.js" type="text/javascript"></script>
         <script src="<%= request.getContextPath()%>/libs/jquery/jquery-3.7.1.min.js" type="text/javascript"></script>
-        <script src="<%= request.getContextPath()%>/ControllerJs/PrincipalControllerJs.js" type="text/javascript"></script>
+        <!--<script src="<%= request.getContextPath()%>/ControllerJs/PrincipalControllerJs.js" type="text/javascript"></script>-->
         <link href="<%= request.getContextPath()%>/css/Footer.css" rel="stylesheet" type="text/css"/>
         <link href="<%= request.getContextPath()%>/css/flexslider.css" rel="stylesheet" type="text/css"/>
         <script src="<%= request.getContextPath()%>/libs/jquery/jquery-ui.js" type="text/javascript"></script>
@@ -30,7 +30,7 @@
         <script src="<%= request.getContextPath()%>/libs/bootstrap-5.0.2-dist(1)/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js" type="text/javascript"></script>
         <link href="<%= request.getContextPath()%>/images/fontawesome-free-6.4.2-web/fontawesome-free-6.4.2-web/css/all.min.css" rel="stylesheet" type="text/css"/>
         <script src="<%= request.getContextPath()%>/ControllerJs/LoginControllerJs.js" type="text/javascript"></script>   
-        <script src="<%= request.getContextPath()%>/ControllerJs/Utils.js" type="text/javascript"></script>
+        <!--<script src="<%= request.getContextPath()%>/ControllerJs/Utils.js" type="text/javascript"></script>-->
         <script src="<%= request.getContextPath()%>/Js/ManejadorVentanas.js" type="text/javascript"></script>
         <link href="<%= request.getContextPath()%>/css/loading.css" rel="stylesheet" type="text/css"/>
         

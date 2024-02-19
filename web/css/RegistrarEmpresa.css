@@ -1,0 +1,37 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 19/02/2024, 12:28:13 PM
+    Author     : David
+*/
+
+*{
+  
+  
+}
+label{
+  font-size: .8rem;  
+}
+input{
+ border: solid 1px #ffca2c; 
+ font-size: .8rem; 
+}
+
+#dvContRegistraEmp{
+    padding: 1%;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    border: solid 1px #ffca2c;  
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+  align-items: center;
+}
+
+.dvLabelForm{
+    
+}
