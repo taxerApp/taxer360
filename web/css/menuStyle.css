@@ -1,13 +1,13 @@
 /* estilos base */
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 body {
-  margin: 0;
-  font-family: 'Signika Negative', sans-serif;
-  /*background-color: #F5F5F5;*/
-  /*background-color: white;*/
-  
+    margin: 0;
+
+    /*background-color: #F5F5F5;*/
+    /*background-color: white;*/
+
 }
 
 
@@ -15,22 +15,24 @@ body {
 /* header
 ****************************/
 .header {
-  width: 100%;
-  background-color: #F5F5F5;
-  
+    width: 100%;
+    /*background-color: #F5F5F5;*/
+    background-color: var(--amarilloBackground);
+
 }
 .header a {
-  text-decoration: none;
-  color: #ffca2c;
+    font-family: 'Antonio-Bold';
+    text-decoration: none;
+    color: white;
 }
 .child-header {
-  max-width: 1400px;
-  padding: 0 5%;
-  margin: 0 auto 0;
-  
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    max-width: 1400px;
+    padding: 0 5%;
+    margin: 0 auto 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 
@@ -38,9 +40,10 @@ body {
 /* logo
 ****************************/
 .link-logo {
-  font-weight: 700;
-  color: #000;
-  font-size: 28px;
+    font-weight: 700;
+    color: #000;
+    font-family: 'Antonio-Bold';
+    font-size: 28px;
 }
 
 
@@ -48,35 +51,38 @@ body {
 /* menu de navegacion
 ****************************/
 .box-menu-navegacion {
-  width: 50%;
+    width: 50%;
 }
 .box-menu-navegacion ul {
-  margin: 0;
-  list-style: none;
-  padding: 0;
+    margin: 0;
+    list-style: none;
+    padding: 0;
 }
 .menu-navegacion {  
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .item-menu-link {
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 14px;
-  color: #000;
-  transition: .3s linear;
-  padding: 1.8rem 0;
-  display: inline-block;
+    font-family: 'Antonio-Bold';
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    color: #000;
+    transition: .3s linear;
+    padding: 1.8rem 0;
+    display: inline-block;
 }
 
 /* hover */
 .item-menu-link:hover {
-  color: #003eff;
+    font-family: 'Antonio-Bold';
+    color: #003eff;
 }
 .item-menu-sub-menu:hover i {
-  color: #003eff;
-  transition: .3s linear;
+    font-family: 'Antonio-Bold';
+    color: #003eff;
+    transition: .5s linear;
 }
 
 
@@ -85,21 +91,21 @@ body {
 /* boton hamburguesa
 ****************************/
 .btn-hamburguesa {
-  display: none;
-  background-color: transparent;
-  height: 30px;
-  border: none;
-  cursor: pointer;
+    display: none;
+    background-color: transparent;
+    height: 30px;
+    border: none;
+    cursor: pointer;
 }
 .btn-hamburguesa span {
-  height: 2px;
-  display: block;
-  background-color: #000;
-  width: 25px;
-  border-radius: 20px;
+    height: 2px;
+    display: block;
+    background-color: #000;
+    width: 25px;
+    border-radius: 20px;
 }
 .btn-hamburguesa span:nth-child(2) {
-  margin: .4rem 0;
+    margin: .4rem 0;
 }
 
 
@@ -107,104 +113,109 @@ body {
 /* sub menu
 ****************************/
 .item-menu-sub-menu {
-  position: relative;
+    position: relative;
 }
 .sub-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 250px;
-  background-color: #F5F5F5;
-  transform: scaley(0);
-  transform-origin: top;
-  transition: transform .3s linear;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 250px;
+    /*background-color: #F5F5F5;*/
+     background-color: var(--amarilloBackground);
+    transform: scaley(0);
+    transform-origin: top;
+    transition: transform .3s linear;
 }
 .sub-menu .item-menu-link {
-  padding: .8rem;
+    padding: .8rem;
 }
 
 /* hover */
 .item-menu-sub-menu:hover .sub-menu {
-  transform: scaley(1);
+    transform: scaley(1);
 }
 
 
 
- .txtEncabezado{
-      color:#ffca2c;
-       font-size: 14px;
-  }
+.txtEncabezado{
+    font-family: 'Antonio-Bold';
+    /*color:#ffca2c;*/
+    color: white;
+    font-size: 1rem;
+}
 
 @media screen and (max-width: 980px) {
-  /* boton hamburguesa
-  ****************************/
-  .btn-hamburguesa {
-    display: block;
-  }
-  
-  /*  header
-  ****************************/
-  .header {
-    position: relative;
-    padding: 1rem 0;
-  }
-  
-  /*  menu de navegacion
-  ****************************/
-  .box-menu-navegacion {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #F5F5F5;
-    width: 100%;
-    transform: scaley(0);
-    transform-origin: top;
-    transition: .3s linear;
-    padding: 0 2rem;
-  }
-  .menu-navegacion {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .item-menu-link {
-    padding: 1rem 0;
-  }
-  .item-menu-sub-menu {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    width: 100%;
-  }
-  .angle-view-sub-menu {
-    border: 1px solid #000;
-    width: 30px;
-    display: flex;
-    justify-content: center;
-    padding: .2rem 0;
-  }
-  .sub-menu {
-    width: 100%;
-    position: initial;
-    transform: scaley(1);
-    display: none;
-  }
-  
-  
-  /*  activador sub menu
-  ****************************/
-  .viewMenu {
-    transform: scaley(1);
-  }
+    /* boton hamburguesa
+    ****************************/
+    .btn-hamburguesa {
+        display: block;
+    }
 
-  
-  /*  hover
-  ****************************/
-  .item-menu-link:hover,
-  .item-menu-sub-menu:hover i {
-    color: initial;
-  }
-  
-  
- 
+    /*  header
+    ****************************/
+    .header {
+        position: relative;
+        padding: 1rem 0;
+    }
+
+    /*  menu de navegacion
+    ****************************/
+    .box-menu-navegacion {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        /*background-color: #F5F5F5;*/
+          background-color: var(--amarilloBackground);
+        width: 100%;
+        transform: scaley(0);
+        transform-origin: top;
+        transition: .3s linear;
+        padding: 0 2rem;
+    }
+    .menu-navegacion {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .item-menu-link {
+        padding: 1rem 0;
+    }
+    .item-menu-sub-menu {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .angle-view-sub-menu {
+        /*border: 1px solid #000;*/
+        width: 30px;
+        display: flex;
+        justify-content: center;
+        padding: .2rem 0;
+    
+    }
+    .sub-menu {
+        width: 100%;
+        position: initial;
+        transform: scaley(1);
+        display: none;
+    }
+
+
+    /*  activador sub menu
+    ****************************/
+    .viewMenu {
+        transform: scaley(1);
+    }
+
+
+    /*  hover
+    ****************************/
+    .item-menu-link:hover,
+    .item-menu-sub-menu:hover i {
+        color: initial;
+    }
+
+
+
 }

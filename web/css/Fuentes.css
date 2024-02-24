@@ -1,0 +1,79 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 23/02/2024, 11:07:29 AM
+    Author     : David
+*/
+
+
+/*fuente Antonio*/
+@font-face {
+  font-family: 'Antonio-Bold';
+  src: url('../fonts/antonio/Antonio-Bold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+
+@font-face {
+  font-family: 'Antonio-Regular';
+  src: url('../fonts/antonio/Antonio-Regular.ttf')  format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Antonio-Light';
+  src: url('../fonts/antonio/Antonio-Light.ttf')  format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+
+/*fuente inter*/
+
+@font-face {
+  font-family: 'Inter-Bold';
+  src: url('../fonts/inter/Inter-Bold.ttf')  format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+
+@font-face {
+  font-family: 'Inter-Regular';
+  src: url('../fonts/inter/Inter-Regular.ttf')  format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Inter-Light-BETA';
+  src: url('../fonts/inter/Inter-Light-BETA.ttf')  format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Inter-Italic';
+  src: url('../fonts/inter/Inter-Italic.ttf')  format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Inter-BoldItalic';
+  src: url('../fonts/inter/Inter-BoldItalic.ttf')  format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Inter-LightItalic-BETA';
+  src: url('../fonts/inter/Inter-LightItalic-BETA.ttf')  format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}

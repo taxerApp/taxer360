@@ -12,10 +12,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Evaluación 360</title>
         <script defer src="<%= request.getContextPath()%>/libs/jquery/jquery.flexslider-min.js"></script>
-        <link href="<%= request.getContextPath()%>/libs/jquery/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
-        <script src="<%= request.getContextPath()%>/libs/jquery/jquery.dataTables.min.js" type="text/javascript"></script>
-        <link href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css" rel="stylesheet" type="text/css"/>
-        <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js" type="text/javascript"></script>
+        
         <script src="<%= request.getContextPath()%>/libs/jquery/jquery-3.7.1.js" type="text/javascript"></script>
         <script src="<%= request.getContextPath()%>/libs/jquery/jquery-3.7.1.min.js" type="text/javascript"></script>
         <!--<script src="<%= request.getContextPath()%>/ControllerJs/PrincipalControllerJs.js" type="text/javascript"></script>-->
@@ -23,17 +20,22 @@
         <link href="<%= request.getContextPath()%>/css/flexslider.css" rel="stylesheet" type="text/css"/>
         <script src="<%= request.getContextPath()%>/libs/jquery/jquery-ui.js" type="text/javascript"></script>
         <link href="<%= request.getContextPath()%>/libs/jquery/jquery-ui.css" rel="stylesheet" type="text/css"/>
+        
+        <link href="<%= request.getContextPath()%>/libs/jquery/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
+        <script src="<%= request.getContextPath()%>/libs/jquery/jquery.dataTables.min.js" type="text/javascript"></script>
+        <link href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css" rel="stylesheet" type="text/css"/>
+        <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js" type="text/javascript"></script>
         <script src="<%= request.getContextPath()%>/libs/bootstrap-5.0.2-dist(1)/bootstrap-5.0.2-dist/js/bootstrap.js" type="text/javascript"></script>
         <link href="<%= request.getContextPath()%>/libs/bootstrap-5.0.2-dist(1)/bootstrap-5.0.2-dist/css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <script src="<%= request.getContextPath()%>/libs/bootstrap-5.0.2-dist(1)/bootstrap-5.0.2-dist/js/bootstrap.min.js" type="text/javascript"></script>
         <link href="<%= request.getContextPath()%>/libs/bootstrap-5.0.2-dist(1)/bootstrap-5.0.2-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <script src="<%= request.getContextPath()%>/libs/bootstrap-5.0.2-dist(1)/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js" type="text/javascript"></script>
-        <link href="<%= request.getContextPath()%>/images/fontawesome-free-6.4.2-web/fontawesome-free-6.4.2-web/css/all.min.css" rel="stylesheet" type="text/css"/>
+        <link href="<%= request.getContextPath()%>/img/fontawesome-free-6.4.2-web/fontawesome-free-6.4.2-web/css/all.min.css" rel="stylesheet" type="text/css"/>
         <script src="<%= request.getContextPath()%>/ControllerJs/LoginControllerJs.js" type="text/javascript"></script>   
         <!--<script src="<%= request.getContextPath()%>/ControllerJs/Utils.js" type="text/javascript"></script>-->
         <script src="<%= request.getContextPath()%>/Js/ManejadorVentanas.js" type="text/javascript"></script>
         <link href="<%= request.getContextPath()%>/css/loading.css" rel="stylesheet" type="text/css"/>
-        
+
         <!--estilos de contenedor de sesion-->
         <link href="<%= request.getContextPath()%>/css/Sesion.css" rel="stylesheet" type="text/css"/>
 
@@ -51,16 +53,25 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" integrity="sha512-CQBWl4fJHWbryGE+Pc7UAxWMUMNMWzWxF4SQo9CgkJIN1kx6djDQZjh3Y8SZ1d+6I+1zze6Z7kHXO7q3UyZAWw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/helpers.js" integrity="sha512-08S2icXl5dFWPl8stSVyzg3W14tTISlNtJekjsQplv326QtsmbEVqL4TFBrRXTdEj8QI5izJFoVaf5KgNDDOMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/helpers.min.js" integrity="sha512-JG3S/EICkp8Lx9YhtIpzAVJ55WGnxT3T6bfiXYbjPRUoN9yu+ZM+wVLDsI/L2BWRiKjw/67d+/APw/CDn+Lm0Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+         <!--fin graficas-->
         <script src="<%= request.getContextPath()%>/ControllerJs/PruebaControllerJS.js" type="text/javascript"></script>
 
-        <!--fin graficas-->
+        <!--GENERICOS-->
+        <link href="<%= request.getContextPath()%>/css/Fuentes.css" rel="stylesheet" type="text/css"/> <!--fuentes agregadas-->
+        <link href="<%= request.getContextPath()%>/css/ComponentesGenericos.css" rel="stylesheet" type="text/css"/> <!--estilos para componentes que se usan mas de una vez-->
+        <link href="<%= request.getContextPath()%>/css/GamaColores.css" rel="stylesheet" type="text/css"/> <!--Gama de colores -->
+       <!--FIN GENERICOS-->
+       
+       <!--EMPRESA-->
+       <script src="<%= request.getContextPath()%>/ControllerJs/EmpresaControllerJs.js" type="text/javascript"></script>
+       <!--FIN EMPRESA-->
     </head>
     <%
 
         Usuario usu = (Usuario) (session.getAttribute("usuario") == null ? new Usuario() : session.getAttribute("usuario"));
 
         if (usu.getNombreDeUsuario() == null || usu.getNombreDeUsuario().trim().equals("") || usu.getNombreDeUsuario().equalsIgnoreCase("null")) {
-              System.out.println("Err");%>
+            System.out.println("Err");%>
 
     <script>
 
@@ -71,13 +82,13 @@
     <%} else {%>
 
     <body>
-        <div id="dvMenu" style="width: 100%; padding-left: 5%; padding-right: 5%; background: #F5F5F5;"><%@include file="Generales/MenuSesion.jsp" %></div>
+        <div id="dvMenu" style="width: 100%; padding-left: 5%; padding-right: 5%;   background-color: var(--amarilloBackground);"><%@include file="Generales/MenuSesion.jsp" %></div>
         <!--indicador de  cargando-->
-           <div id="overlay">
-    <div class="cv-spinner"><label>Espera un momento ...<br></label> 
-    <span class="spinner"></span>
-  </div>
-</div>
+        <div id="overlay">
+            <div class="cv-spinner"><label>Espera un momento ...<br></label> 
+                <span class="spinner"></span>
+            </div>
+        </div>
         <!--fin indicador de cargando-->
         <div id="dvContenedorSesion"><%@include file="Sesion/frmHome.jsp" %></div>
     </body>

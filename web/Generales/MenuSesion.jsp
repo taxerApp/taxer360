@@ -24,101 +24,106 @@
         <link href="<%= request.getContextPath()%>/css/menuStyle.css" rel="stylesheet" type="text/css"/>
     </head>
     <%
-       Usuario usuSesion = (Usuario)  session.getAttribute("usuario");  
-        
-    MenuDao dao = new MenuDao();
-    List<MenuDto> lstMenu =dao.geMenu(usuSesion.getId());
-    
+        Usuario usuSesion = (Usuario) session.getAttribute("usuario");
+
+        MenuDao dao = new MenuDao();
+        List<MenuDto> lstMenu = dao.geMenu(usuSesion.getId());
+
     %>
     <body>
         <header class="header">
             <div class="child-header">
-               
+
                 <div class="box-logo">
-           
-                    <label class="txtEncabezado">Bienvenid@: <%= usuSesion.getNombreDeUsuario() %></label><br>
+
+                    <label class="txtEncabezado">Bienvenid@: <%= usuSesion.getNombreDeUsuario()%></label><br>
                     <label class="txtEncabezado" ><%= usuSesion.getTipoUsuario()%></label>
-                  
+
                 </div>
 
                 <nav class="box-menu-navegacion" id="menu-navegacion">
                     <ul class="menu-navegacion">
-                        <% for(int i=0;i<lstMenu.size();i++){%>
-                           <li class="item-menu item-menu-sub-menu">
+                        <% for (int i = 0; i < lstMenu.size(); i++) {%>
+                        <li class="item-menu item-menu-sub-menu">
                             <a href="#"  class="item-menu-link" id="<%=lstMenu.get(i).getIdPantalla()%>"><%=lstMenu.get(i).getNombreMenu()%></a>
-                      <%
-                          
-                        List<SubMenuDto> lstSubMenu=  dao.getSubMenu(lstMenu.get(i).getId());
-                       %>
-<!--                        <i class="fas fa-angle-down angle-view-sub-menu" style="color: #ffca2c;"></i>
-                            <i class="fas fa-angle-down angle-view-sub-menu"></i>-->
-                          <ul class="sub-menu" id="sub-menu">
-                            <%  for(int j=0;j<lstSubMenu.size();j++){
-                    System.out.println("nombre subMenu "+lstSubMenu.get(j).getNombreSubMenu()+" del menu con id "+lstMenu.get(i).getId());
-                          
-                      
-                      %>
+                            <%
 
-                                <li class="item-menu">
-                                    <a href="#" class="item-menu-link" id="<%=lstSubMenu.get(j).getIdPantalla()%>"><%=lstSubMenu.get(j).getNombreSubMenu()%></a>
-                                </li>
-  
-                      <%  }
-                      %>
-                          </ul> 
-                           </li>  
+                                List<SubMenuDto> lstSubMenu = dao.getSubMenu(lstMenu.get(i).getId());
+                            %>
+
+                            <!--<i class="fas fa-angle-down angle-view-sub-menu"></i>-->
+
+
+                            <%if (lstSubMenu.isEmpty()) {%>
+                            <ul class="sub-menu" id="sub-menu">  
+                                <%}%>
+
+                                <%  for (int j = 0; j < lstSubMenu.size(); j++) {%>
+
+                                <%if (j == 0) {%>
+                                <i class="fa fa-angle-down angle-view-sub-menu" style="color:white;"></i>
+                                <ul class="sub-menu" id="sub-menu">   
+                                    <%}%>
+
+                                    <li class="item-menu">
+                                        <a href="#" class="item-menu-link" id="<%=lstSubMenu.get(j).getIdPantalla()%>"><%=lstSubMenu.get(j).getNombreSubMenu()%></a>
+                                    </li>
+
+                                    <%  }%>
+                                </ul> 
+                        </li>  
                         <%}%>
-<!--                        <li class="item-menu">
-                            <a href="#" class="item-menu-link">Inicio</a>
-                        </li>
-                        <li class="item-menu">
-                            <a href="#" class="item-menu-link">Sobre Nosotros</a>
-                        </li>
-
-                        <li class="item-menu item-menu-sub-menu">
-                            <a href="#" class="item-menu-link">Clases Particulares</a>
-                            <i class="fas fa-angle-down angle-view-sub-menu" style="color: #ffca2c;"></i>
-
-                            <ul class="sub-menu" id="sub-menu">
-                                <li class="item-menu">
-                                    <a href="#" class="item-menu-link">Desarrollo Web</a>
-                                </li>
-                                <li class="item-menu">
-                                    <a href="#" class="item-menu-link">Posicionamiento SEO</a>
-                                </li>
-                                <li class="item-menu">
-                                    <a href="#" class="item-menu-link">Campañas de Google Ads</a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="item-menu item-menu-sub-menu">
-                            <a href="#" class="item-menu-link">Servicios</a>
-                            <i class="fas fa-angle-down angle-view-sub-menu" style="color: #ffca2c;"></i>
-                            <i class="fas fa-angle-down angle-view-sub-menu"></i>
-
-                            <ul class="sub-menu" id="sub-menu">
-                                <li class="item-menu">
-                                    <a href="#" class="item-menu-link">Desarrollo Web</a>
-                                </li>
-                                <li class="item-menu">
-                                    <a href="#" class="item-menu-link">Posicionamiento SEO</a>
-                                </li>
-                                <li class="item-menu">
-                                    <a href="#" class="item-menu-link">Campañas de Google Ads</a>
-                                </li>
-                                <li class="item-menu">
-                                    <a href="#" class="item-menu-link">Campañas de Facebook Ads</a>
-                                </li>
-                                <li class="item-menu">
-                                    <a href="#" class="item-menu-link">Diseño para Redes Sociales</a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="item-menu">
-                            <a href="#" class="item-menu-link">Contacto</a>
-                        </li>-->
+                        <!--                        <li class="item-menu">
+                                                    <a href="#" class="item-menu-link">Inicio</a>
+                                                </li>
+                                                <li class="item-menu">
+                                                    <a href="#" class="item-menu-link">Sobre Nosotros</a>
+                                                </li>
+                        
+                                                <li class="item-menu item-menu-sub-menu">
+                                                    <a href="#" class="item-menu-link">Clases Particulares</a>
+                                                    <i class="fas fa-angle-down angle-view-sub-menu" style="color: #ffca2c;"></i>
+                        
+                                                    <ul class="sub-menu" id="sub-menu">
+                                                        <li class="item-menu">
+                                                            <a href="#" class="item-menu-link">Desarrollo Web</a>
+                                                        </li>
+                                                        <li class="item-menu">
+                                                            <a href="#" class="item-menu-link">Posicionamiento SEO</a>
+                                                        </li>
+                                                        <li class="item-menu">
+                                                            <a href="#" class="item-menu-link">Campañas de Google Ads</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                        
+                                                <li class="item-menu item-menu-sub-menu">
+                                                    <a href="#" class="item-menu-link">Servicios</a>
+                                                    <i class="fas fa-angle-down angle-view-sub-menu" style="color: #ffca2c;"></i>
+                                                    <i class="fas fa-angle-down angle-view-sub-menu"></i>
+                        
+                                                    <ul class="sub-menu" id="sub-menu">
+                                                        <li class="item-menu">
+                                                            <a href="#" class="item-menu-link">Desarrollo Web</a>
+                                                        </li>
+                                                        <li class="item-menu">
+                                                            <a href="#" class="item-menu-link">Posicionamiento SEO</a>
+                                                        </li>
+                                                        <li class="item-menu">
+                                                            <a href="#" class="item-menu-link">Campañas de Google Ads</a>
+                                                        </li>
+                                                        <li class="item-menu">
+                                                            <a href="#" class="item-menu-link">Campañas de Facebook Ads</a>
+                                                        </li>
+                                                        <li class="item-menu">
+                                                            <a href="#" class="item-menu-link">Diseño para Redes Sociales</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                        
+                                                <li class="item-menu">
+                                                    <a href="#" class="item-menu-link">Contacto</a>
+                                                </li>-->
                     </ul>
                 </nav>
 

@@ -24,16 +24,13 @@ import java.util.logging.Logger;
  * @author David
  */
 public class ControlAccesoDao extends Conexion {
-
+    
     public ControlAccesoDao() {
-
+        
     }
 
-  
-
-       /*Desde aqui empiezan los querys*/
-    
-    public Usuario login(String usuario,String pw) {
+    /*Desde aqui empiezan los querys*/
+    public Usuario login(String usuario, String pw) {
         Usuario objUsuario = new Usuario();
         Connection Cn = getConexion();
         CallableStatement ps = null;
@@ -43,44 +40,42 @@ public class ControlAccesoDao extends Conexion {
             ps = Cn.prepareCall(squl);
             ps.setString(1, usuario);
             ps.setString(2, pw);
-        
+            
             try {
                 ps.execute();
                 rs = ps.getResultSet();
-
+                
                 while (rs.next()) {
-             
-                   
-                objUsuario.setId(rs.getInt("id"));
-                objUsuario.setNombreDeUsuario(rs.getString("NombreDeUsuario"));
-               objUsuario.setTipoUsuario(rs.getString("tipoUsuario"));
-
-                  
-
+                    
+                    objUsuario.setId(rs.getInt("id"));
+                    objUsuario.setNombreDeUsuario(rs.getString("NombreDeUsuario"));
+                    objUsuario.setTipoUsuario(rs.getString("tipoUsuario"));
+                    objUsuario.setIdTipoUsuario(rs.getInt("idTipo"));
+                    
                 }
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
+            
         } catch (SQLException e) {
-
+            
         } finally {
             try {
                 Cn.close();
                 if (ps != null) {
                     ps.close();
                 }
-
+                
                 if (rs != null) {
                     rs.close();
                 }
-
+                
             } catch (SQLException ex) {
                 Logger.getLogger(ControlAccesoDao.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         return objUsuario;
-
+        
     }
-   
+    
 }

@@ -1,0 +1,53 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 23/02/2024, 07:08:44 PM
+    Author     : David
+*/
+
+body{
+   color:var(--amarilloBackground);
+   font-family: 'Inter-Regular';  
+   background: var(--colorFondoForm); 
+}
+.table{
+    border: solid 1px var(--amarilloBackground); 
+    margin-bottom: 20%;
+    width:100%;
+   
+   
+}
+
+tr{
+    border: solid 1px var(--amarilloBackground); 
+}
+
+th{
+    color: var(--amarilloBackground); 
+}
+td{
+    color: var(--amarilloBackground); 
+}
+
+.paginate_button{
+    color:var(--amarilloBackground); 
+    border: solid 1px var(--amarilloBackground); 
+}
+
+.dataTables_paginate paging_simple_numbers{
+   color:var(--amarilloBackground);   
+}
+.paginate_button_disabled {
+
+ color:var(--amarilloBackground); 
+    
+}
+.paginate_button:hover {
+ color:var(--amarilloBackground); 
+}
+.paginate_active {
+ color:var(--amarilloBackground); 
+}

@@ -32,7 +32,7 @@
         <script src="<%= request.getContextPath()%>/ControllerJs/Utils.js" type="text/javascript"></script>
         <link href="css/cascada.css" rel="stylesheet" type="text/css"/>
         <link href="<%= request.getContextPath()%>/css/loading.css" rel="stylesheet" type="text/css"/>
-
+        <link href="<%= request.getContextPath()%>/css/Fuentes.css" rel="stylesheet" type="text/css"/> <!--fuentes agregadas-->
     </head>
     <body>
 
@@ -42,6 +42,10 @@
     <span class="spinner"></span>
   </div>
 </div>
+        
+<!--        <label style=" font-family:Antonio-Bold;">Antonio-Bold</label>
+        <label style=" font-family:Antonio-Regular;">Antonio-Bold</label>
+        <label style=" font-family:Antonio-Light;">Antonio-Bold</label>-->
         <!--fin indicador de cargando-->
                 <div class="container-fluid h-custom"></div>
             <div class="row d-flex justify-content-center align-items-center h-100"></div>

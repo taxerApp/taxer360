@@ -14,6 +14,7 @@ public class Usuario {
     private String nombreDeUsuario;
     private String tipoUsuario;
     private int status;
+    private int idTipoUsuario;
     
 
     
@@ -51,6 +52,14 @@ public class Usuario {
 
     public void setStatus(int status) {
         this.status = status;
+    }
+
+    public int getIdTipoUsuario() {
+        return idTipoUsuario;
+    }
+
+    public void setIdTipoUsuario(int idTipoUsuario) {
+        this.idTipoUsuario = idTipoUsuario;
     }
 
     

@@ -10,30 +10,43 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        
-          <link href="<%= request.getContextPath()%>/css/RegistrarEmpresa.css" rel="stylesheet" type="text/css"/>
+
+        <link href="<%= request.getContextPath()%>/css/RegistrarEmpresa.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-      
+
         <div id="dvContRegistraEmp">
-            <table>
+            <table id="tblFromREmpresa">
                 <tr>
                     <td>
-                       <label>Nombre Empresa:</label> 
+                        <label class="etqForm">Nombre Comercial:</label> <br>    
+                        <input type="text" id="txtNombreEmpresa" class="campoInputText">
                     </td>
-                    <td><input type="text" id="txtDNIEmpresa"></td>
+
                 </tr>
-                
-                 <tr>
+                <tr>
                     <td>
-                       <label>DNI Empresa:</label> 
+                        <label class="etqForm">RFC:</label> <br>
+                        <input type="text" id="txtRfc"  class="campoInputText">
                     </td>
-                    <td><input type="text" id="txtDNIEmpresa"></td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <label class="etqForm">Razón Social:</label> <br>
+                        <input type="text" id="txtRazonSocial"  class="campoInputText">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td colspan="2">
+                <center>  <input type="button" class="btnForm" value="Registrar" id="btnRegistrarEmpresa"></center>
+                </td>
                 </tr>
             </table>
-           
-            
+
+
         </div>   
-      
+
     </body>
 </html>

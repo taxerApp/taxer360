@@ -4,9 +4,17 @@
         <servlet-name>CtrlLogin</servlet-name>
         <servlet-class>Controller.CtrlLogin</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CtrlEmpresa</servlet-name>
+        <servlet-class>Controller.CtrlEmpresa</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CtrlLogin</servlet-name>
         <url-pattern>/CtrlLogin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CtrlEmpresa</servlet-name>
+        <url-pattern>/CtrlEmpresa</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
