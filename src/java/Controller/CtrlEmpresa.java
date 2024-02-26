@@ -121,7 +121,7 @@ public class CtrlEmpresa extends HttpServlet {
                 rspuesta += "<td style='background: red; color:white;'>";
             }
             rspuesta += (lstEmpresa.get(i).getStatus()==1?"Activa":"Inactiva")+ "</td>"
-                    + "<td style='color:black;'><center><i class='fa fa-edit' style='color:#ffca2c'></i></center></td>"
+                    + "<td style='color:black;' onclick='wndEditaEmpresa()'><center><i class='fa fa-edit' style='color:#ffca2c'></i></center></td>"
                     + "</tr>";
         }
         System.out.println(""+rspuesta);
