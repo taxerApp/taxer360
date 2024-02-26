@@ -1,0 +1,118 @@
+body {
+    font-family: Arial, sans-serif;
+       font-size: 1.2rem;
+}
+#tituloPrincipal{
+    text-align:right;
+    font-family: Arial;
+
+}
+.lineaDeTitulo{
+    margin-top: -5%;
+    color: orange;
+         text-align:right;
+}
+.resultado{
+    position:absolute; 
+    top:20%; 
+    left: 20%;
+    color: black;
+    font-weight: bold; 
+}
+.contenedorflex {
+    display: flex; 
+    flex-direction: row; 
+    align-items: flex-start; 
+    width: 100%; 
+    height: 50%;
+}
+
+.moderna {
+    margin:auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1.1rem;
+    
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: lightgray; 
+    color: black;
+};
+
+tr{
+
+}
+
+.tabla {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 10%;
+   
+}
+
+/* Estilos para cada celda */
+.cRoja{
+    background: red;
+    color: black;
+    font-weight: bold; 
+}
+.cNegra{
+    background: black;
+    color: white;
+    font-weight: bold; 
+}
+.cVerde{
+    background: #92d050;
+    color: black;
+    font-weight: bold; 
+}
+.cNaranja{
+    background: orange;
+    color: black;
+    font-weight: bold; 
+}
+.cAmarilla{
+    background: yellow;
+    color: black;
+    font-weight: bold; 
+}
+.cAzul{
+    background: #00b0f0;
+    color: black;
+    font-weight: bold; 
+}
+.cRosa{
+    background: #fce4d6;
+    color: black;
+    font-weight: bold; 
+    text-align: left;
+}
+.cGris{
+    background: #f2f2f2;
+    color: black;
+    font-weight: bold; 
+}
+
+.cPrincipal{
+    text-align: left;
+  
+}
+.textoInferior{
+    position:absolute; 
+    top:100%;  /* margen deberia estar en 75% */
+    left: 10%;
+    color: graytext;
+    width: 100%; 
+    font-size: 1.1rem;
+
+}

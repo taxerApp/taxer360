@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+       font-size: 1.2rem;
+}
+#tituloPrincipal{
+    text-align:right;
+    font-family: Arial;
+
+}
+.lineaDeTitulo{
+    margin-top: -5%;
+    color: orange;
+         text-align:right;
+}
+.cuadro {
+  position: absolute;
+  top: 28%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  height: 20%;
+  background-color: yellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px; 
+}
+.txPuntuacionGlobal{
+    width: 100%;
+    text-align: center;   
+     font-size: 1rem;
+}
+
+.resultado{
+    position:absolute; 
+    top:25%; 
+    left:10%;
+    color: #305775;
+    font-size: 1rem;
+       
+}
+
+.lider {
+  position: absolute;
+  top: 60%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  width: 12%;
+  height: 25%;
+  background-color: orange;
+/*  display: flex;*/
+/*  justify-content: center;*/
+/*  align-items: center;*/
+  border-radius: 20px; 
+  
+}
+.pares {
+  position: absolute;
+  top:  60%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  width: 12%;
+  height: 25%;
+  background-color: orange;
+/*  display: flex;
+  justify-content: center;
+  align-items: center;*/
+  border-radius: 20px; 
+}
+.colaborador {
+  position: absolute;
+  top: 60%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  width: 12%;
+  height: 25%;
+  background-color: #92d050;
+/*  display: flex;
+  justify-content: center;
+  align-items: center;*/
+  border-radius: 20px; 
+}
+.cliente {
+  position: absolute;
+  top: 60%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+  width: 12%;
+  height: 25%;
+  background-color: orange;
+/*  display: flex;
+  justify-content: center;
+  align-items: center;*/
+  border-radius: 20px; 
+}
+
+
