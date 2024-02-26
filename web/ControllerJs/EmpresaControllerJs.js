@@ -53,5 +53,32 @@ $(document).on("click", "#btnRegistrarEmpresa", function (e) {
 // 
 });
 
+function wndEditaEmpresa(id,empresa,rfc,razonSocial,status) {
+
+ $("#overlay").fadeIn();
+    $("#wndEditaEmpresa").dialog({
+        width: '90%',
+//        height:'auto', 
+        height: 350,
+        show: "blind",
+        hide: "blind",
+        resizable: "false",
+        my: "center",
+        at: "center",
+        of: window,
+        modal: "true",
+        open: function (event, ui) {
+            $('#wndEditaEmpresa').load("wndEditaEmpresa.jsp?id="+id+"&&empresa="+empresa+"&&rfc"+"&&razonSocial="+razonSocial+"&&status="+status, function () {
+//                   esta funcion se ejecuta cuando se termino de realizar la carga de la modal
+ $("#overlay").fadeOut();
+            });
+        },
+
+        close: function () {
+
+
+        }
+    });
+}
 
 });
