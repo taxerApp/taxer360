@@ -99,3 +99,4 @@
 
 <!--aqui van los divs para las ventanas modales-->
 <div id="wndReporteIndividual" class="ventana" title="Reporte Individual" style="background: white;"></div>
+<div id="wndEditaEmpresa" class="ventana" title="Editar Empresa" style="background: white;"></div>
