@@ -1,0 +1,154 @@
+body {
+    font-family: Arial, sans-serif;
+       font-size: 1.2rem;
+}
+#tituloPrincipal{
+    text-align:right;
+    font-family: Arial;
+
+}
+.lineaDeTitulo{
+    margin-top: -5%;
+    color: orange;
+         text-align:right;
+}
+.rectangulo {
+  position: absolute;
+  top: 30%;
+  left: 18%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  height: 100px;
+  background-color: orange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px; 
+  color: grey;
+  font-weight: bold; 
+}
+.cuadro {
+  position: absolute;
+  top: 60%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  width: 35%;
+  height: 200px;
+  background-color: orange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+ 
+}
+
+.resultado{
+    position:absolute; 
+    top:50%; 
+    right:1%;
+    color: grey;
+    width: 55%;
+    
+}
+
+.contenedorflex {
+    display: flex; 
+    flex-direction: row; 
+    align-items: flex-start; 
+    width: 100%; 
+   
+}
+
+.tabla {
+    flex-grow: 1; 
+}
+
+.moderna {
+    margin:auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1.1rem;
+    
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: gray; 
+    color: white;
+};
+
+tr{
+
+}
+
+.tabla {
+    margin-left: 2%;
+    margin-right: 10%;
+    margin-top: 40%;
+   
+}
+
+/* Estilos para cada celda */
+.rojo{
+    background: red;
+    color: white;
+    font-weight: bold; 
+}
+.negro{
+    background: black;
+    color: white;
+    font-weight: bold; 
+}
+.verde{
+    background: #92d050;
+    color: black;
+    font-weight: bold; 
+}
+.naranja{
+    background: orange;
+    color: black;
+    font-weight: bold; 
+}
+.amarillo{
+    background: yellow;
+    color: black;
+    font-weight: bold; 
+}
+.azul{
+    background: #00b0f0;
+    color: white;
+    font-weight: bold; 
+}
+.rosa{
+    background: #fce4d6;
+    color: black;
+    font-weight: bold; 
+    text-align: left;
+}
+.cGris{
+    
+    color: lightgray;
+    font-weight: bold; 
+}
+
+.cPrincipal{
+    text-align: left;
+  
+}
+.texto{
+    position:absolute; 
+    top:60%; 
+    right:1%;
+    color: grey;
+    width: 33%; 
+    font-size: 1.1rem;
+
+}

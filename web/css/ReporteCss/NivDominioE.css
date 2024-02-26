@@ -1,0 +1,69 @@
+body {
+    font-family: Arial, sans-serif;
+   
+}
+#tituloPrincipal{
+   text-align: right; 
+}
+.moderna {
+    margin:auto;
+}
+
+table {
+    width: 90%;
+    border-collapse: collapse;
+    font-size: 1.2rem;
+    
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background: black; 
+    color: white;
+};
+
+tr{
+
+}
+
+.tabla {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8%;
+}
+
+/* Estilos para cada celda */
+.cRoja{
+    background: red;
+    color: white;
+    font-weight: bold; 
+}
+.cVerde{
+    background: #92d050;
+    color: black;
+    font-weight: bold; 
+}
+.cNaranja{
+    background: orange;
+    color: black;
+    font-weight: bold; 
+}
+.cAmarilla{
+    background: yellow;
+    color: black;
+    font-weight: bold; 
+}
+.cAzul{
+    background: #00b0f0;
+    color: white;
+    font-weight: bold; 
+}
+.cSecundaria{
+    text-align: left;
+  
+}

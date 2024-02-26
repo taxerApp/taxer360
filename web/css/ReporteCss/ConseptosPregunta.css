@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+       font-size: 1.2rem;
+}
+#tituloPrincipal{
+    text-align:right;
+    font-family: Arial;
+
+}
+.lineaDeTitulo{
+    margin-top: -5%;
+    color: orange;
+         text-align:right;
+}
+
+.contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start; /* Alineación de los cuadros en la parte superior */
+    margin: 5%; /* Centrar los cuadros horizontalmente */
+}
+
+.cuadrado {
+    font-family: Arial, sans-serif;
+    font-size: 1.2rem;
+    margin-top: 10%; /* Ajuste del margen superior */
+    margin-bottom: 20px;
+    padding: 20px;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+}
+
+.cuadrado:nth-child(1), .cuadrado:nth-child(2) {
+    width: 35%;
+    height: 50%;
+}
+
+.cuadrado:nth-child(3), .cuadrado:nth-child(4) {
+    width: 35%;
+    height: 400px;
+    margin-top: 5%; /* Ajuste del margen superior */
+}
+
+.cuadrado:nth-child(1) {
+    background-color: #d7d7d7; 
+    color: #1f2d77;
+    font-weight: bold; 
+    font-size: 1.8rem;
+}
+
+.cuadrado:nth-child(2) {
+    background-color: #fd8204;
+    color: #1f2d77;
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+
+.cuadrado:nth-child(3) {
+    background-color: #1f2d77;
+    color: white;
+    text-align: right;
+}
+
+.cuadrado:nth-child(4) {
+    background-color: #1f2d77; 
+    color: white;
+    text-align: right;
+}
+.cuadrado p {
+    
+    margin-top: 70%; /* Espacio entre el texto y el borde inferior del cuadro */
+    font-size: 1.2rem; /* Tamaño de fuente del texto adicional */
+    color: black; /* Color del texto adicional */
+    font-weight: bold;
+}

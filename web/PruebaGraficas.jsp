@@ -30,23 +30,50 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         <link href="css/PruebaGrafica.css" rel="stylesheet" type="text/css"/>
+        
     </head>
     <body>
         <input type="button" value="Generar pdf" id="btnGenerarPdf">
-        <div id="dvContenedor" style="width: 90%;  margin-left: 5%; margin-right: 5%;">
-            <img src="img/khor.png">
+        <div id="dvContenedor" style="width: 80%;  margin-left: 5%; margin-right: 5%;">
+            <table style="background-color: rgb(14,12,64); color: white; width: 100%;">
+                <tr>
+  <td> <img src="img/belearnig1.png" alt="" width="100px" height="100px"></td>
+  <th style="text-align: left">    Evaluación de 360 Grados. Reporte Individual <br>
+          ATILANO VARGAS MARIA MAGDALENA<br>
+          EV. 360 2023     </th>
+  <td><img src="img/belearnig1.png" alt="" width="100px" height="100px" ></td></td>
+  
+</tr>
+            </table>
+           
             <!-- aqui va todo el contenido html--> 
-            <blockquote style="color: rgb(29,23,123)">
-                Evaluado:              ATILANO VARGAS MARIA MAGDALENA <br>
-                Perfil:                360°_Jefe de área 23  <br>
-                Fecha de Evaluación:   2/Mar/2023  <br>
-            </blockquote>
+            
+                <table   style="color: rgb(29,23,123); margin: 0 auto;">
+                    <tr>
+                        <td></td>
+                        <td style="text-align: right"><b>  Evaluado: </b> </td>
+                    <td>  ATILANO VARGAS MARIA MAGDALENA  </td>
+                        <td style="text-align: right"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    <td style="text-align: right"><b>  Perfil: </b> </td>
+                    <td>  360°_Jefe de área 23 </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    <td style="text-align: right"><b>  Fecha de Evaluación:  </b></td>
+                    <td>  2/Mar/2023  </td>
+                        <td></td>
+                    </tr>
+            </table>
 
             <p style="color: rgb(29,23,123)"><b>Bienvenido(a)</b> al reporte de resultados de tu retroalimentación de 360°. Este reporte te permitirá conocer la percepción
                 que tienen las personas que te rodean (incluyendo tu autoevaluación) respecto a tu conducta laboral y tus atributos
                 personales y profesionales en cuanto a liderazgo.</p>
 
-            <h4 style="color: rgb(29,23,123)">Propósito</h4>
+            <h3 style="color: rgb(29,23,123)">Propósito</h3>
 
             <p style="color: rgb(29,23,123)"> El objetivo de la retroalimentación de 360° es ayudarte a comprender mejor la manera en que comportas cotidianamente,
                 en la percepción de tus compañeros de trabajo.
@@ -54,7 +81,7 @@
                 capitalices tus puntos fuertes y que desarrolles aquellos que necesitan mejora.
                 En la medida que contemos con mejores líderes, podremos identificar, atraer, desarrollar y retener talento, de modo que
                 juntos, demos valor a nuestros clientes.</p>
-            <h4 style="color: rgb(29,23,123)">¿Por dónde comenzar?</h4>
+            <h3 style="color: rgb(29,23,123)">¿Por dónde comenzar?</h3>
             <p style="color: rgb(29,23,123)">Lo primero que debes hacer, es leer tu reporte completo. Es importante que lo leas cuidadosamente y que reflexiones en
                 cómo utilizar constructivamente la retroalimentación recibida. Cuando lo leas, hazte las siguientes preguntas:
             </p>
@@ -69,7 +96,7 @@
                 • ¿Qué posibles obstáculos se podrían presentar al llevar a cabo mi plan de acción? <br>
             </p>
 
-            <h4 style="color: rgb(29,23,123)">Definiciones</h4>
+            <h3 style="color: rgb(29,23,123)">Definiciones</h3>
             <p style="color: rgb(29,23,123)">
                 Antes de comenzar, es importante que tengas presentes los siguientes conceptos:</p>
             <p style="color: rgb(29,23,123)">
@@ -84,13 +111,13 @@
                 • Media. Es el promedio simple de las calificaciones obtenidas. <br>
                 • Moda. Es la calificación que más se utilizó en determinada pregunta o factor del cuestionario.</p>
 
-            <h4 style="color: rgb(29,23,123)">Si tienes dudas</h4>
+            <h3 style="color: rgb(29,23,123)">Si tienes dudas</h3>
 
             <p style="color: rgb(29,23,123)">No olvides contactar a tu representante de RRHH en caso de que tengas dudas de cómo interpretar estos resultados, o
                 cómo utilizarlos para trazar tu plan de acción personal.
             </p>
 
-            <h4 style="color: rgb(29,23,123)">Resultado General</h4>
+            <h3 style="color: rgb(29,23,123)">Resultado General</h3>
 
 
             <div style="width: 55%; break-after: page;">
@@ -175,7 +202,23 @@
                 </tr>
             </table> <br>
 
-            <h4 style="color: rgb(29,23,123)">Autoevaluación comparada respecto a los demás evaluadores</h4>
+            <h3 style="color: rgb(29,23,123)">Autoevaluación comparada respecto a los demás evaluadores</h3>
+            
+              <div style="width: 55%;">
+                <canvas id="grafica2" ></canvas>  
+                        <div style="width: 110%; margin-top: 0%;"><table>
+                                <tr>
+                                    <td style=" width: 17px; height:1px;"><label> R. B </label></td>
+                                    <td style=" width: 16px; height: 1px;"><label> 1 </label></td>
+                                    <td style=" width: 16px; height: 1px;"><label> 2 </label></td>
+                                    <td style=" width: 15px; height: 1px;"><label> 3 </label></td>
+                                    <td style=" width: 15px; height: 1px;"><label> 4 </label></td>
+                                    <td style=" width: 15px; height: 1px;"><label> 5 </label></td>
+                                    <td style=" width: 13px; height: 1px;"><label> 6 </label></td>
+                                    <td style=" width: 13.5px; height: 1px;"><label> 7 </label></td>
+                                </tr>
+                    </table></div>
+            </div>
 
             <table style="color: rgb(29,23,123)">
 
@@ -189,8 +232,8 @@
                     <th abc >  Resultado (A)  </th>
                     <th def>   σ  </th>
                     <th def>   Media   </th>
-                    <th ghi>    Moda   </th>
-                    <th def>    Resultado(D)    </th>
+                    <th def>    Moda   </th>
+                    <th ghi>    Resultado(D)    </th>
                     <th def>   σ  </th>
                     <th def>   Media    </th>
                     <th def>   Moda   </th> 
@@ -296,7 +339,7 @@
                 </tr>
             </table> 
 
-            <h4 style="color: rgb(29,23,123)">Conductas Observables con calificaciones más ALTAS</h4>
+            <h3 style="color: rgb(29,23,123)">Conductas Observables con calificaciones más ALTAS</h3>
 
             <table style="color: rgb(29,23,123)">
 
@@ -332,7 +375,7 @@
                     <td>   96.0%</td> 
                 </tr>
             </table> 
-            <h4 style="color: rgb(29,23,123)">Conductas Observables con calificaciones más BAJAS</h4>
+            <h3 style="color: rgb(29,23,123)">Conductas Observables con calificaciones más BAJAS</h3>
 
             <table style="color: rgb(29,23,123)">
 
@@ -369,9 +412,11 @@
                 </tr>
             </table> 
 
+            <div style="width: 55%;"></div>
             <p>______________________________________________________________________________________________________________________</p>
-
-            <img src="img/Ucorp.png"
+            <div style=" margin: auto; width: 450px;">
+                <center><img src="img/Ucorp.png"> </center>
+            </div>
 
                  <br> <!-- aqui termina todo el contenido html-->
 
@@ -391,6 +436,57 @@
                             label: ["Competencias"],
                             data: [92.8, 95.6, 95.4, 94.2, 90.5, 90.7, 93.4, 90.0],
                             backgroundColor: ["greenyellow", "blue", "yellow", "pink", "skyblue", "grey", "rgb(255,128,128)", "rgb(128,255,128)"]
+                        }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                                ticks: {
+                                    beginAtZero: true //para que mande los valores de forma corrscta respetando el orden que le damos
+                                }
+                            }]
+                    }
+                }
+            });
+
+//            $(function () {
+//                $('#btnGenerarPdf').click(function () {
+//           const $elementoParaConvertir = document.querySelector("#dvContenedor"); // <-- Aquí puedes elegir cualquier elemento del DOM
+//                    html2pdf()
+//                            .set({
+//                                margin: 1,
+//                                filename: 'documento.pdf',
+//                                image: {
+//                                    type: 'jpeg',
+//                                    quality: 0.98
+//                                },
+//                                html2canvas: {
+//                                    scale: 3, // A mayor escala, mejores gráficos, pero más peso
+//                                    letterRendering: true,
+//                                },
+//                                jsPDF: {
+//                                    unit: "in",
+//                                    format: "a4",
+//                                    orientation: 'portrait' // landscape o portrait
+//                                }
+//                            })
+//                            .from($elementoParaConvertir)
+//                            .save()
+//                            .catch(err => console.log(err));
+//
+//                });
+//            });
+        </script>
+        <script>
+            var ctxGrafica2 = document.getElementById("grafica2").getContext("2d");
+            var grafica2 = new Chart(ctxGrafica2, {
+                type: "bar",
+                data: {
+                    labels: ["A", "D", "A", "D", "A", "D", "A", "D", "A", "D", "A", "D", "A", "D", "A", "D"],
+                    datasets: [{
+                            label: ["Competencias"],
+                            data: [100, 92.0, 100, 95.1, 100, 94.9, 100, 93.6, 100, 89.4, 100, 89.7, 100, 92.7, 100, 88.9,],
+                            backgroundColor: ["red", "greenyellow", "red", "greenyellow","red", "greenyellow","red", "greenyellow","red", "greenyellow","red", "greenyellow","red", "greenyellow","red", "greenyellow",]
                         }]
                 },
                 options: {

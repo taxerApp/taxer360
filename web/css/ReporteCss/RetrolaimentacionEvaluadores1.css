@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+       font-size: 1.2rem;
+}
+#tituloPrincipal{
+    text-align:right;
+    font-family: Arial;
+
+}
+.lineaDeTitulo{
+    margin-top: -5%;
+    color: orange;
+         text-align:right;
+}
+h2 {
+    margin-top: 5%;
+    color: #333e50;
+    font-weight: bold;   
+}
+ul {
+  list-style-type: none;
+  padding: 3%;
+  width: 90%;
+
+}
+.points-container {
+  border: 2px solid lightgray;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 3px 3px lightgray;
+  width: 90%;
+  margin-left: 5%; 
+}
+
+label {
+  
+  color: #313131
+}
+.textoRojo{
+    position:absolute; 
+    top:145%; /* 105*/
+    left: 7%; 
+    font-size: 0.8rem;
+    color: red;
+}
