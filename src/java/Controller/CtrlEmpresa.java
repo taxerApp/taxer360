@@ -121,12 +121,22 @@ public class CtrlEmpresa extends HttpServlet {
                 rspuesta += "<td style='background: red; color:white;'>";
             }
             rspuesta += (lstEmpresa.get(i).getStatus()==1?"Activa":"Inactiva")+ "</td>"
-                    + "<td style='color:black;' onclick='wndEditaEmpresa()'><center><i class='fa fa-edit' style='color:#ffca2c'></i></center></td>"
+//                    + "<td style='color:black;' onclick=\"wndEditaEmpresa("+lstEmpresa.get(i).getId()+",'"+lstEmpresa.get(i).getEmpresa()+"','"+lstEmpresa.get(i).getRfc()+"','"+lstEmpresa.get(i).getRazonSocial()+"',"+lstEmpresa.get(i).getStatus()+");\"><center><i class='fa fa-edit' style='color:#ffca2c'></i></center></td>"
+                    + "<td style='color:black;' onclick=\"wndEditaEmpresa("+lstEmpresa.get(i).getId()+",'"+lstEmpresa.get(i).getEmpresa()+"','"+lstEmpresa.get(i).getRfc()+"','"+lstEmpresa.get(i).getRazonSocial()+"',"+lstEmpresa.get(i).getStatus()+");\"><center><i class='fa fa-edit' style='color:#ffca2c'></i></center></td>"
                     + "</tr>";
         }
         System.out.println(""+rspuesta);
         return rspuesta;
 
     }
+//   Aqui se va a poner el private de String "wndEditaEmpresa" 
+//    private String consultaEmpresa(HttpServletRequest request) {
+//        String rspuesta="";
+//        List<EmpresaDto> lstEmpresa = new ArrayList<EmpresaDto>();
+//        int idEmpresa = Integer.parseInt(request.getParameter("idEmpresa"));
+//        int bnd = Integer.parseInt(request.getParameter("bnd"));
+//        EmpresaDao dao = new EmpresaDao();
+//       lstEmpresa= dao.consultaEmpresa(idEmpresa, bnd);
+   
 
 }
