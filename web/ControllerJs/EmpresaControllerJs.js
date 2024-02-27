@@ -53,16 +53,14 @@ $(document).on("click", "#btnRegistrarEmpresa", function (e) {
 // 
 });
 
-$(document).on("click", "#icnEdita", function (e) {
-   alert("sfrgyyyyy"); 
+
+
 });
+
 function wndEditaEmpresa(id,empresa,rfc,razonSocial,status) {
-
-alert(id);
-
  $("#overlay").fadeIn();
     $("#wndEditaEmpresa").dialog({
-        width: '90%',
+        width: '40%',
 //        height:'auto', 
         height: 350,
         show: "blind",
@@ -73,7 +71,7 @@ alert(id);
         of: window,
         modal: "true",
         open: function (event, ui) {
-            $('#wndEditaEmpresa').load("wndEditaEmpresa.jsp?id="+id+"&&empresa="+empresa+"&&rfc"+"&&razonSocial="+razonSocial+"&&status="+status, function () {
+            $('#wndEditaEmpresa').load("Sesion/Empresa/wndEditarEmpresa.jsp?id="+id+"&&empresa="+empresa.replaceAll(" ","|")+"&&rfc"+rfc+"&&razonSocial="+razonSocial.replaceAll(" ","|")+"&&status="+status, function () {
 //                   esta funcion se ejecuta cuando se termino de realizar la carga de la modal
  $("#overlay").fadeOut();
             });
@@ -85,5 +83,3 @@ alert(id);
         }
     });
 }
-
-});

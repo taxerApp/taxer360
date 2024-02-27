@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="<%= request.getContextPath()%>/ControllerJs/EmpresaControllerJs.js" type="text/javascript"></script>
+        <!--<script src="%= // request.getContextPath()%>/ControllerJs/EmpresaControllerJs.js" type="text/javascript"></script>-->
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         <%Usuario usu = (Usuario) session.getAttribute("usuario");%>
@@ -19,8 +19,10 @@
 //    int idEmpresa=Integer.parseInt(request.getParameter("idEmpresa"));
     %>
        <link href="<%= request.getContextPath()%>/css/ConsultarEmpresa.css" rel="stylesheet" type="text/css"/>
-    <script>
-      
+   
+       <!--<script src="%= request.getContextPath()%>/ControllerJs/EmpresaControllerJs.js" type="text/javascript"></script>-->
+       <script>
+   
           consultaInicialEmpresa();
            function consultaInicialEmpresa(){
      var bnd=$("#txtBnd").val(); 
