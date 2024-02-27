@@ -6,7 +6,7 @@
 
 
 $(document).ready(function () {
-
+          alert("yuyg");
 
   
  
@@ -53,7 +53,12 @@ $(document).on("click", "#btnRegistrarEmpresa", function (e) {
 // 
 });
 
+$(document).on("click", "#icnEdita", function (e) {
+   alert("sfrgyyyyy"); 
+});
 function wndEditaEmpresa(id,empresa,rfc,razonSocial,status) {
+
+alert(id);
 
  $("#overlay").fadeIn();
     $("#wndEditaEmpresa").dialog({
