@@ -27,18 +27,55 @@ public class EmpresaDao extends Conexion {
     public EmpresaDao() {
     }
 
-    public boolean registraEmpresa(String empresa, String rfc, String razonSocial) {
+    public boolean registraEmpresa(String empresa, String rfc, String razonSocial, String correo) {
         boolean registro = false;
         Connection Cn = getConexion();
         PreparedStatement ps = null;
         try {
 
-            ps = Cn.prepareStatement(" insert into empresa  (empresa,isCliente,status,rfc,razonSocial) values( ?,?,?,?,?)");
+            ps = Cn.prepareStatement(" insert into empresa  (empresa,isCliente,status,rfc,razonSocial,correo) values( ?,?,?,?,?,?)");
             ps.setString(1, empresa);
             ps.setInt(2, 1);
             ps.setInt(3, 1);
             ps.setString(4, rfc);
             ps.setString(5, razonSocial);
+            ps.setString(6, correo);
+            try {
+                ps.execute();
+                registro = true;
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        } catch (SQLException e) {
+
+        } finally {
+            try {
+                Cn.close();
+                if (ps != null) {
+                    ps.close();
+                }
+
+            } catch (SQLException ex) {
+                Logger.getLogger(EmpresaDao.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return registro;
+    }
+    
+    public boolean actualizaEmpresa(String empresa, String rfc, String razonSocial, int status,String correo, int id) {
+        boolean registro = false;
+        Connection Cn = getConexion();
+        PreparedStatement ps = null;
+        try {
+
+            ps = Cn.prepareStatement(" update empresa set empresa = ?,  rfc = ?, razonSocial = ?, status = ?, correo=? where id = ?");
+            ps.setString(1, empresa);
+            ps.setString(2, rfc);
+            ps.setString(3, razonSocial);
+            ps.setInt(4, status);
+            ps.setString(5, correo);
+            ps.setInt (6, id);
             try {
                 ps.execute();
                 registro = true;
@@ -86,6 +123,7 @@ public class EmpresaDao extends Conexion {
                     objEmpresa.setStatus(rs.getInt("status"));
                     objEmpresa.setRfc(rs.getString("rfc"));
                     objEmpresa.setRazonSocial(rs.getString("razonSocial"));
+                    objEmpresa.setCorreo(rs.getString("correo"));
                     lstEmpresa.add(objEmpresa);
 
                 }
@@ -113,5 +151,7 @@ public class EmpresaDao extends Conexion {
         return lstEmpresa;
 
     }
+
+   
 
 }
