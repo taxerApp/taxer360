@@ -71,7 +71,7 @@ function wndEditaEmpresa(id, empresa, rfc, razonSocial, correo, status) {
         of: window,
         modal: "true",
         open: function (event, ui) {
-            $('#wndEditaEmpresa').load("Sesion/Empresa/wndEditarEmpresa.jsp?id="+id+"&&empresa="+empresa.replaceAll(" ", "|")+"&&rfc="+rfc+"&&razonSocial="+razonSocial.replaceAll(" ", "|")+"&&rfc="+correo+"&&status="+status, function () {
+            $('#wndEditaEmpresa').load("Sesion/Empresa/wndEditarEmpresa.jsp?id="+id+"&&empresa="+empresa.replaceAll(" ", "|")+"&&rfc="+rfc+"&&razonSocial="+razonSocial.replaceAll(" ", "|")+"&&correo="+correo+"&&status="+status, function () {
                 // Esta función se ejecuta cuando se termina de cargar la modal
                 $("#overlay").fadeOut();
             });
