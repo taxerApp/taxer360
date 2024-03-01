@@ -16,6 +16,7 @@ public class EmpresaDto {
     private int status;
     private String rfc;
     private String razonSocial;
+    private String correo;    
 
     public int getId() {
         return id;
@@ -64,6 +65,15 @@ public class EmpresaDto {
     public void setRazonSocial(String razonSocial) {
         this.razonSocial = razonSocial;
     }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+    
     
     
 }
