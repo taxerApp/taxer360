@@ -75,6 +75,10 @@ public class CtrlEmpresa extends HttpServlet {
             case 2:
                 out.print(consultaEmpresa(request));
                 break;
+                
+            case 3:
+                out.print(actualizaEmpresa(request));
+                break;
 
         }
     }
@@ -94,8 +98,23 @@ public class CtrlEmpresa extends HttpServlet {
         String empresa = request.getParameter("empresa");;
         String rfc = request.getParameter("rfc");
         String razonSocial = request.getParameter("razonSocial");
+        String correo = request.getParameter("correo");  
         EmpresaDao dao = new EmpresaDao();
-        boolean respuesta = dao.registraEmpresa(empresa, rfc, razonSocial);
+        boolean respuesta = dao.registraEmpresa(empresa, rfc, razonSocial, correo);
+        return respuesta;
+
+    }
+    
+    private boolean actualizaEmpresa(HttpServletRequest request) {
+
+        String empresa = request.getParameter("empresa");;
+        String rfc = request.getParameter("rfc");
+        String razonSocial = request.getParameter("razonSocial");
+        int id = Integer.parseInt(request.getParameter("id"));
+        int status = Integer.parseInt(request.getParameter("status")) ;
+        String correo = request.getParameter("correo");        
+        EmpresaDao dao = new EmpresaDao();
+        boolean respuesta = dao.actualizaEmpresa(empresa, rfc, razonSocial, status, correo, id);
         return respuesta;
 
     }
@@ -113,7 +132,9 @@ public class CtrlEmpresa extends HttpServlet {
                     + "<td hidden='true'>" + lstEmpresa.get(i).getId() + "</td>"
                     + "<td>" + lstEmpresa.get(i).getEmpresa()+ "</td>"
                     + "<td>" + lstEmpresa.get(i).getRfc()+ "</td>"
-                    + "<td>" + lstEmpresa.get(i).getRazonSocial()+ "</td>";
+                    + "<td>" + lstEmpresa.get(i).getRazonSocial()+ "</td>"
+                    + "<td>" + lstEmpresa.get(i).getCorreo()+ "</td>";
+            
             if (lstEmpresa.get(i).getStatus()==1) {
 //                rspuesta += "<td style='background: green; color:white;'>";
                 rspuesta += "<td>";
@@ -121,22 +142,14 @@ public class CtrlEmpresa extends HttpServlet {
                 rspuesta += "<td style='background: red; color:white;'>";
             }
             rspuesta += (lstEmpresa.get(i).getStatus()==1?"Activa":"Inactiva")+ "</td>"
-//                    + "<td style='color:black;' onclick=\"wndEditaEmpresa("+lstEmpresa.get(i).getId()+",'"+lstEmpresa.get(i).getEmpresa()+"','"+lstEmpresa.get(i).getRfc()+"','"+lstEmpresa.get(i).getRazonSocial()+"',"+lstEmpresa.get(i).getStatus()+");\"><center><i class='fa fa-edit' style='color:#ffca2c'></i></center></td>"
-                    + "<td style='color:black;' onclick=\"wndEditaEmpresa("+lstEmpresa.get(i).getId()+",'"+lstEmpresa.get(i).getEmpresa()+"','"+lstEmpresa.get(i).getRfc()+"','"+lstEmpresa.get(i).getRazonSocial()+"',"+lstEmpresa.get(i).getStatus()+");\"><center><i class='fa fa-edit' style='color:#ffca2c'></i></center></td>"
+
+                    + "<td style='color:black;' onclick=\"wndEditaEmpresa("+lstEmpresa.get(i).getId()+",'"+lstEmpresa.get(i).getEmpresa()+"','"+lstEmpresa.get(i).getRfc()+"','"+lstEmpresa.get(i).getRazonSocial()+"','"+lstEmpresa.get(i).getCorreo()+"',"+lstEmpresa.get(i).getStatus()+");\"><center><i class='fa fa-edit' style='color:#ffca2c'></i></center></td>"
                     + "</tr>";
         }
         System.out.println(""+rspuesta);
         return rspuesta;
 
     }
-//   Aqui se va a poner el private de String "wndEditaEmpresa" 
-//    private String consultaEmpresa(HttpServletRequest request) {
-//        String rspuesta="";
-//        List<EmpresaDto> lstEmpresa = new ArrayList<EmpresaDto>();
-//        int idEmpresa = Integer.parseInt(request.getParameter("idEmpresa"));
-//        int bnd = Integer.parseInt(request.getParameter("bnd"));
-//        EmpresaDao dao = new EmpresaDao();
-//       lstEmpresa= dao.consultaEmpresa(idEmpresa, bnd);
-   
+
 
 }
