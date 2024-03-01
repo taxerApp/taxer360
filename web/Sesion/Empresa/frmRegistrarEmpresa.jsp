@@ -39,10 +39,17 @@
 
                 </tr>
                 <tr>
+                    <td>
+                        <label class="etqForm">Correo:</label> <br>
+                        <input type="text" id="txtCorreo" class="campoInputText">
+                    </td>
+                </tr>
+                <tr>
                     <td colspan="2">
                 <center>  <input type="button" class="btnForm" value="Registrar" id="btnRegistrarEmpresa"></center>
                 </td>
                 </tr>
+                
             </table>
 
 
