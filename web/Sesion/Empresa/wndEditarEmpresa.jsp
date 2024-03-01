@@ -8,80 +8,78 @@
 <!DOCTYPE html>
 <html>
     <head>
-        
-<!--        <div id="wndEditaEmpresa" class="ventana" title="Editar Empresa" style="background: white;"></div>-->
+
+        <!--        <div id="wndEditaEmpresa" class="ventana" title="Editar Empresa" style="background: white;"></div>-->
 
 
         <link href="<%= request.getContextPath()%>/css/EditaEmpresa.css" rel="stylesheet" type="text/css"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         <%
-          int id=Integer.parseInt(request.getParameter("id"));
-          String empresa=request.getParameter("empresa");
-          String razonSocial=request.getParameter("razonSocial").replaceAll("|", " ");
+            int id = Integer.parseInt(request.getParameter("id"));
+            String empresa = request.getParameter("empresa").replaceAll("\\|", " ");
+            String razonSocial = request.getParameter("razonSocial").replaceAll("\\|", " ");
+            String rfc = request.getParameter("rfc");
+            String correo = request.getParameter("correo");
+            String status = request.getParameter("status");
         %>
+        <script>
+            // $("#cmbStatusEmpresa option[value="<%=status%>").prop("selected",true);//
+            $("#cmbStatusEmpresa option[value='<%=status%>']").prop("selected", true);
+        </script>
     </head>
     <body>
-        <h3> Editar </h3>
+
+    <body>
+        <input type="text" id="txtIdEmpresaE" value="<%=id%>" hidden="true">
+
         <div id="dvContEditaEmpresa">
-            <table id="tblEditaEmpresa">
-                               
-
-<div>
-<button id="boton" onclick="cambiarEstado()">Activa</button>
-</div>
-<script>
-function cambiarEstado() {
-    var boton = document.getElementById('boton');
-    if (boton.textContent === 'Activa') {
-        boton.textContent = 'Inactiva';
-        boton.style.backgroundColor = 'red';
-    } else {
-        boton.textContent = 'Activa';
-        boton.style.backgroundColor = 'green';
-    }
-}
-</script>
-
-                <tr>
-             
-                    <td>
+            <table id="tblEditaEmpresa" class="table">
+                <tr class="fila">
+                    <td class="celda">
                         <label class="etqForm">Nombre Comercial:</label> <br>    
-                        <input type="text" id="txtNombreEmpresa" value="<%=empresa%>" class="campoInputText">
+                        <input type="text" id="txtEditaEmpresa" value="<%=empresa%>" class="campoInputTextE">
                     </td>
-
                 </tr>
-                <tr>
-                    <td>
+                <tr class="fila">
+                    <td class="celda">
                         <label class="etqForm">RFC:</label> <br>
-                        <input type="text" id="txtRfc"  class="campoInputText">
+                        <input type="text" id="txtEditaRfc" value="<%=rfc%>" class="campoInputTextE">
                     </td>
-
                 </tr>
-                <tr>
-                    <td>
+                <tr class="fila">
+                    <td class="celda">
                         <label class="etqForm">Razón Social:</label> <br>
-                        <input type="text" id="txtRazonSocial" value="<%=razonSocial %>" class="campoInputText">
+                        <input type="text" id="txtEditaRazonSocial" value="<%=razonSocial%>" class="campoInputTextE">
                     </td>
-
                 </tr>
-                <tr>
-                <td class="botonSupeior">
-                <center><input type="button" class="btnForm1" value="Guardar" id="btnGuardarCambios"></center>
-                <!--         id=registraEmpresa-->      
-                </td>
+                <tr class="fila">
+                    <td class="celda">
+                        <label class="etqForm">Correo:</label> <br>
+                        <input type="text" id="txtEditaCorreo" value="<%=correo%>" class="campoInputTextE">
+                    </td>
                 </tr>
-                <tr>
-                <td class="botonSupeior">
-                <input type="button" class="btnForm2" value="Cancelar" id="btnCancelar"> 
-<!--                id=CtrlEmpresa-->
+                <tr class="fila">
+                    <td class="celda"> 
+                         <label class="etqForm">Estatus:</label> <br>
+             
+                    <select id="cmbStatusEmpresa" >
+                        <option value="1">Activa</option>
+                        <option value="0">Inactiva</option>
+                    </select>
+              
                 </td>
+                </tr> <br>
+                <tr class="fila">
+                    <td class="celda">
+                        <input type="button" value="Guardar" id="btnEditaEmpresa">
+                    </td>
+                    <td class="celda">
+                        <input type="button" value="Cancelar" id="btnCancelar" onclick="cancelar()">
+                    </td>
                 </tr>
             </table>
-
-
         </div>   
-               
     </body>
-    
+
 </html>
