@@ -13,8 +13,8 @@ $(document).on("click", "#btnLogin", function (e) {
     var pw = $("#txtPw").val();
 
      if(correo.trim() ==="" || pw.trim()=== ""){
-         alert("Todos los campos son obligatorios");
-         
+//         alert("Todos los campos son obligatorios");
+          alertify.warning('Todos los campos son obligatorios');
      }else {
           $("#overlay").fadeIn();
         $.ajax({
@@ -26,14 +26,17 @@ $(document).on("click", "#btnLogin", function (e) {
                 bnd: 1
             },
             success: function (data) {
-                   $("#overlay").fadeOut();
+                  
             if(data === 'true'){
-              alert("Usuario Valido")
+//              alert("Usuario Valido")
+              alertify.success('Usuario Valido');
                    if (window.location = "Sesion.jsp") {
 
                     }
             }else{
-                alert("Usuario no Valido");
+                 $("#overlay").fadeOut();
+//                alert("Usuario no Valido");
+                 alertify.error('Usuario no Valido');
             }
         
 

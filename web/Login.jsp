@@ -33,6 +33,11 @@
         <link href="css/cascada.css" rel="stylesheet" type="text/css"/>
         <link href="<%= request.getContextPath()%>/css/loading.css" rel="stylesheet" type="text/css"/>
         <link href="<%= request.getContextPath()%>/css/Fuentes.css" rel="stylesheet" type="text/css"/> <!--fuentes agregadas-->
+    
+    <script src="<%= request.getContextPath()%>/libs/bootstrap-5.0.2-dist(1)/bootstrap-5.0.2-dist/alertifyjs/alertify.js" type="text/javascript"></script>
+        <link href="<%= request.getContextPath()%>/libs/bootstrap-5.0.2-dist(1)/bootstrap-5.0.2-dist/alertifyjs/css/alertify.css" rel="stylesheet" type="text/css"/>
+         <script src="<%= request.getContextPath()%>/libs/bootstrap-5.0.2-dist(1)/bootstrap-5.0.2-dist/alertifyjs/alertify.min.js" type="text/javascript"></script>
+
     </head>
     <body>
 

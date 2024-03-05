@@ -27,58 +27,30 @@ public class EmpresaDao extends Conexion {
     public EmpresaDao() {
     }
 
-    public boolean registraEmpresa(String empresa, String rfc, String razonSocial, String correo) {
-        boolean registro = false;
+    public String registraEmpresa(String empresa, String rfc, String razonSocial, String correo,String pwNPerfil) {
         Connection Cn = getConexion();
-        PreparedStatement ps = null;
+        CallableStatement ps = null;
+        ResultSet rs = null;
+        String respuesta = "";
         try {
-
-            ps = Cn.prepareStatement(" insert into empresa  (empresa,isCliente,status,rfc,razonSocial,correo) values( ?,?,?,?,?,?)");
-            ps.setString(1, empresa);
-            ps.setInt(2, 1);
-            ps.setInt(3, 1);
-            ps.setString(4, rfc);
-            ps.setString(5, razonSocial);
-            ps.setString(6, correo);
-            try {
-                ps.execute();
-                registro = true;
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-        } catch (SQLException e) {
-
-        } finally {
-            try {
-                Cn.close();
-                if (ps != null) {
-                    ps.close();
-                }
-
-            } catch (SQLException ex) {
-                Logger.getLogger(EmpresaDao.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-        return registro;
-    }
-    
-    public boolean actualizaEmpresa(String empresa, String rfc, String razonSocial, int status,String correo, int id) {
-        boolean registro = false;
-        Connection Cn = getConexion();
-        PreparedStatement ps = null;
-        try {
-
-            ps = Cn.prepareStatement(" update empresa set empresa = ?,  rfc = ?, razonSocial = ?, status = ?, correo=? where id = ?");
+            String squl = "select registraEmpresa(?,?,?,?,?) as resp";
+            ps = Cn.prepareCall(squl);
             ps.setString(1, empresa);
             ps.setString(2, rfc);
             ps.setString(3, razonSocial);
-            ps.setInt(4, status);
-            ps.setString(5, correo);
-            ps.setInt (6, id);
+            ps.setString(4, correo);
+            ps.setString(5, pwNPerfil);
+
             try {
                 ps.execute();
-                registro = true;
+                rs = ps.getResultSet();
+
+                while (rs.next()) {
+                    respuesta=rs.getString("resp");
+                 
+                   
+
+                }
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -92,12 +64,142 @@ public class EmpresaDao extends Conexion {
                     ps.close();
                 }
 
+                if (rs != null) {
+                    rs.close();
+                }
+
+            } catch (SQLException ex) {
+                Logger.getLogger(ControlAccesoDao.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return respuesta;
+
+    }
+
+//    public boolean registraEmpresa(String empresa, String rfc, String razonSocial, String correo) {
+//        boolean registro = false;
+//        Connection Cn = getConexion();
+//        PreparedStatement ps = null;
+//        try {
+//
+//            ps = Cn.prepareStatement(" insert into empresa  (empresa,isCliente,status,rfc,razonSocial,correo) values( ?,?,?,?,?,?)");
+//            ps.setString(1, empresa);
+//            ps.setInt(2, 1);
+//            ps.setInt(3, 1);
+//            ps.setString(4, rfc);
+//            ps.setString(5, razonSocial);
+//            ps.setString(6, correo);
+//            try {
+//                ps.execute();
+//                registro = true;
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//
+//        } catch (SQLException e) {
+//
+//        } finally {
+//            try {
+//                Cn.close();
+//                if (ps != null) {
+//                    ps.close();
+//                }
+//
+//            } catch (SQLException ex) {
+//                Logger.getLogger(EmpresaDao.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//        }
+//        return registro;
+//    }
+public String actualizaEmpresa(String empresa, String rfc, String razonSocial,
+        int status,String correo, int idEmpresa, String contrasenia) {
+        Connection Cn = getConexion();
+        CallableStatement ps = null;
+        ResultSet rs = null;
+        String respuesta = "";
+        try {
+            String squl = "select editaEmpresa(?,?,?,?,?,?,?) as resp";
+            ps = Cn.prepareCall(squl);
+            ps.setString(1, empresa);
+            ps.setString(2, rfc);
+            ps.setString(3, razonSocial);
+            ps.setString(4, correo);
+            ps.setString(5, contrasenia);
+            ps.setInt(6, status);
+            ps.setInt(7, idEmpresa);
+
+            try {
+                ps.execute();
+                rs = ps.getResultSet();
+
+                while (rs.next()) {
+                    respuesta=rs.getString("resp");
+                 
+                   
+
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        } catch (SQLException e) {
+
+        } finally {
+            try {
+                Cn.close();
+                if (ps != null) {
+                    ps.close();
+                }
+
+                if (rs != null) {
+                    rs.close();
+                }
+
             } catch (SQLException ex) {
                 Logger.getLogger(EmpresaDao.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        return registro;
+        return respuesta;
+
     }
+
+//    public boolean actualizaEmpresa(String empresa, String rfc, String razonSocial,
+//            int status, String correo, int id, String contrasenia) {
+//        boolean registro = false;
+//        Connection Cn = getConexion();
+//        PreparedStatement ps = null;
+//        try {
+//
+//            ps = Cn.prepareStatement(" update empresa set empresa = ?,  rfc = ?, razonSocial = ?, status = ?, correo=?, contrasenia=? where id = ?");
+//            ps.setString(1, empresa);
+//            ps.setString(2, rfc);
+//            ps.setString(3, razonSocial);
+//            ps.setInt(4, status);
+//            ps.setString(5, correo);
+//            ps.setString(6, contrasenia);
+//            ps.setInt(7, id);
+//            try {
+//                ps.execute();
+//                registro = true;
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//
+//        } catch (SQLException e) {
+//
+//        } finally {
+//            try {
+//                Cn.close();
+//                if (ps != null) {
+//                    ps.close();
+//                }
+//
+//            } catch (SQLException ex) {
+//                Logger.getLogger(EmpresaDao.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//        }
+//        return registro;
+//    }
 
     public List<EmpresaDto> consultaEmpresa(int idEmpresa, int bnd) {
         List<EmpresaDto> lstEmpresa = new ArrayList<EmpresaDto>();
@@ -151,7 +253,5 @@ public class EmpresaDao extends Conexion {
         return lstEmpresa;
 
     }
-
-   
 
 }

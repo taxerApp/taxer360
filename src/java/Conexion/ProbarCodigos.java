@@ -32,7 +32,7 @@ public class ProbarCodigos {
                 + "Usuario: "+to+"\n\n"
                 +"Contraseña: "+contrasenia;
         
-        mail.nuevoUsuarioEmpresaCliente(msj, to, subj);
+        mail.enviaCorreo(msj, to, subj);
     }
     
 }

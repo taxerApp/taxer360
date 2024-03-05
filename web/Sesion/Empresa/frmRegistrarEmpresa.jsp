@@ -27,7 +27,7 @@
                 <tr>
                     <td>
                         <label class="etqForm">RFC:</label> <br>
-                        <input type="text" id="txtRfc"  class="campoInputText">
+                        <input type="text" id="txtRfc"  class="campoInputText" oninput="this.value = this.value.toUpperCase()">
                     </td>
 
                 </tr>

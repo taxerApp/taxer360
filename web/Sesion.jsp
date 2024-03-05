@@ -31,6 +31,11 @@
         <link href="<%= request.getContextPath()%>/libs/bootstrap-5.0.2-dist(1)/bootstrap-5.0.2-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <script src="<%= request.getContextPath()%>/libs/bootstrap-5.0.2-dist(1)/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js" type="text/javascript"></script>
         <link href="<%= request.getContextPath()%>/img/fontawesome-free-6.4.2-web/fontawesome-free-6.4.2-web/css/all.min.css" rel="stylesheet" type="text/css"/>
+      
+        <script src="<%= request.getContextPath()%>/libs/bootstrap-5.0.2-dist(1)/bootstrap-5.0.2-dist/alertifyjs/alertify.js" type="text/javascript"></script>
+        <link href="<%= request.getContextPath()%>/libs/bootstrap-5.0.2-dist(1)/bootstrap-5.0.2-dist/alertifyjs/css/alertify.css" rel="stylesheet" type="text/css"/>
+         <script src="<%= request.getContextPath()%>/libs/bootstrap-5.0.2-dist(1)/bootstrap-5.0.2-dist/alertifyjs/alertify.min.js" type="text/javascript"></script>
+
         <script src="<%= request.getContextPath()%>/ControllerJs/LoginControllerJs.js" type="text/javascript"></script>   
         <!--<script src="<%= request.getContextPath()%>/ControllerJs/Utils.js" type="text/javascript"></script>-->
         <script src="<%= request.getContextPath()%>/Js/ManejadorVentanas.js" type="text/javascript"></script>
@@ -65,6 +70,18 @@
        <!--EMPRESA-->
        <script src="<%= request.getContextPath()%>/ControllerJs/EmpresaControllerJs.js" type="text/javascript"></script>
        <!--FIN EMPRESA-->
+       
+       <!--Evaluacion-->
+       <script src="<%= request.getContextPath()%>/ControllerJs/CrearEvaluacionControllerJs.js" type="text/javascript"></script>
+       <!--fin evaluacion-->
+       
+       <!--competencia-->
+       <script src="<%= request.getContextPath()%>/ControllerJs/CrearCompetenciaControllerJs.js" type="text/javascript"></script>
+       <!--fin competencia-->
+       
+       <!--ponderacion-->
+       <script src="<%= request.getContextPath()%>/ControllerJs/RegistraPonderacion.js" type="text/javascript"></script>
+       <!--fin ponderacion-->
     </head>
     <%
 
@@ -100,3 +117,4 @@
 <!--aqui van los divs para las ventanas modales-->
 <div id="wndReporteIndividual" class="ventana" title="Reporte Individual" style="background: white;"></div>
 <div id="wndEditaEmpresa" class="ventana" title="Editar Empresa" style="background: white;"></div>
+<div id="wndCreaEvaluacion" class="ventana" title="Crear Evaluación" style="background: white;"></div>

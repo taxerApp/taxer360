@@ -24,8 +24,9 @@
             String status = request.getParameter("status");
         %>
         <script>
-            // $("#cmbStatusEmpresa option[value="<%=status%>").prop("selected",true);//
+           
             $("#cmbStatusEmpresa option[value='<%=status%>']").prop("selected", true);
+            habilitaInabilitaEditaEmpreda(true)//des habilita los campos
         </script>
     </head>
     <body>
@@ -34,6 +35,17 @@
         <input type="text" id="txtIdEmpresaE" value="<%=id%>" hidden="true">
 
         <div id="dvContEditaEmpresa">
+            <%
+            if(!status.equals("0")){%>
+             <div id="dvCrearNuevaEvaluacion"> <input type="button" value="Crear Evaluacion" class="btnEditaEmpresaModal" onclick="wndCreaEvaluacion(<%=id%>,<%="'"+empresa+"'"%>)"></div>
+ 
+           <% }
+            %>
+             <div id="overlay">
+            <div class="cv-spinner"><label>Espera un momento ...<br></label> 
+                <span class="spinner"></span>
+            </div>
+        </div>
             <table id="tblEditaEmpresa" class="table">
                 <tr class="fila">
                     <td class="celda">
@@ -44,7 +56,7 @@
                 <tr class="fila">
                     <td class="celda">
                         <label class="etqForm">RFC:</label> <br>
-                        <input type="text" id="txtEditaRfc" value="<%=rfc%>" class="campoInputTextE">
+                        <input type="text" id="txtEditaRfc" value="<%=rfc%>" class="campoInputTextE" oninput="this.value = this.value.toUpperCase()">
                     </td>
                 </tr>
                 <tr class="fila">
@@ -71,12 +83,17 @@
                 </td>
                 </tr> <br>
                 <tr class="fila">
-                    <td class="celda">
-                        <input type="button" value="Guardar" id="btnEditaEmpresa">
+                    <td class="celda" colspan="2">
+                           <input type="button" value="Editar" id="btnHabilitaEdiEmpresa" class="btnEditaEmpresaModal">
+                           <input type="button" value="Guardar" id="btnEditaEmpresa" class="btnEditaEmpresaModal">
+                        <input type="button" value="Cerrar" id="btnCancelarEmpresa" class="btnEditaEmpresaModal" onclick="cancelarEditaEmpresa()">
+                        
+                     
                     </td>
-                    <td class="celda">
-                        <input type="button" value="Cancelar" id="btnCancelar" onclick="cancelar()">
-                    </td>
+<!--                    <td class="celda">
+                      
+                    </td>-->
+               
                 </tr>
             </table>
         </div>   

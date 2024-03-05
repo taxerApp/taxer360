@@ -10,7 +10,7 @@ and open the template in the editor.
 
 .campoInputText{
     border: solid 1px #ffca2c; 
-    font-size: 1rem; 
+    font-size: .7rem; 
     width: 100%;
     font-family: 'Antonio-Regular';
     color: #ffca2c;
@@ -21,7 +21,7 @@ and open the template in the editor.
 .etqForm{
     width: 100%;
     /*text-align: right;*/ 
-    font-size: 1.2rem;  
+    font-size: .7rem;  
     font-family: 'Antonio-Bold';
     margin-bottom: 1%;
     margin-top: 2%;
@@ -30,7 +30,7 @@ and open the template in the editor.
 
 .btnForm{
     width: 40%;
-    font-size: 1.2rem;
+    font-size: .7rem;
     font-family: 'Antonio-Bold';
     border: 1px #ffca2c;
     border-radius: 10px ;

@@ -7,6 +7,9 @@ package Controller;
 
 import Dao.EmpresaDao;
 import Dto.EmpresaDto;
+import Utils.EnviaCorreos;
+import Utils.GeneraCodigoVerificacion;
+import Utils.SendMail;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -93,19 +96,30 @@ public class CtrlEmpresa extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
-    private boolean registraEmpresa(HttpServletRequest request) {
+    private String registraEmpresa(HttpServletRequest request) {
 
         String empresa = request.getParameter("empresa");;
         String rfc = request.getParameter("rfc");
         String razonSocial = request.getParameter("razonSocial");
         String correo = request.getParameter("correo");  
         EmpresaDao dao = new EmpresaDao();
-        boolean respuesta = dao.registraEmpresa(empresa, rfc, razonSocial, correo);
+        GeneraCodigoVerificacion g = new GeneraCodigoVerificacion();
+          String contrasenia=g.generaCodigo();
+            System.out.println(""+contrasenia);
+        String respuesta = dao.registraEmpresa(empresa, rfc, razonSocial, correo,contrasenia);
+        
+        if(respuesta.equalsIgnoreCase("La empresa se registro exitosamente.")){
+                 enviaCorreo(correo,contrasenia,1);
+        }
+   
+      
+      
+
         return respuesta;
 
     }
     
-    private boolean actualizaEmpresa(HttpServletRequest request) {
+    private String actualizaEmpresa(HttpServletRequest request) {
 
         String empresa = request.getParameter("empresa");;
         String rfc = request.getParameter("rfc");
@@ -114,7 +128,17 @@ public class CtrlEmpresa extends HttpServlet {
         int status = Integer.parseInt(request.getParameter("status")) ;
         String correo = request.getParameter("correo");        
         EmpresaDao dao = new EmpresaDao();
-        boolean respuesta = dao.actualizaEmpresa(empresa, rfc, razonSocial, status, correo, id);
+              GeneraCodigoVerificacion g = new GeneraCodigoVerificacion();
+          String contrasenia=g.generaCodigo();
+            System.out.println(""+contrasenia);
+//        String empresa, String rfc, String razonSocial,
+//        int status,String correo, int idEmpresa, String contrasenia
+        String respuesta = dao.actualizaEmpresa(empresa, rfc, razonSocial, status, correo, id,contrasenia);
+        System.out.println("respuesta "+respuesta);
+        if(!respuesta.equalsIgnoreCase("La empresa se editó parcialmente con exito.")){
+               enviaCorreo(correo,contrasenia,2);
+        }
+     
         return respuesta;
 
     }
@@ -148,6 +172,25 @@ public class CtrlEmpresa extends HttpServlet {
         }
         System.out.println(""+rspuesta);
         return rspuesta;
+
+    }
+
+    private void enviaCorreo(String correo,String contrasenia,int bnd) {
+         EnviaCorreos enviaCorreo = new EnviaCorreos();
+        switch(bnd){
+            case 1:
+              
+        enviaCorreo.enviaCorreoNPerfilAdminEmpresa(correo, contrasenia);  
+                break;
+                
+                 case 2:
+              
+        enviaCorreo.enviaCorreoNPerfilAdminEmpresa(correo, contrasenia); 
+                break;
+        }
+       
+
+
 
     }
 

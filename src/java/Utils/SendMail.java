@@ -44,7 +44,7 @@ public class SendMail {
 
     }
 
-    public void nuevoUsuarioEmpresaCliente(String msj, String to, String subj) {
+    public void enviaCorreo(String msj, String to, String subj) {
 
 
         Session session = Session.getInstance(props,

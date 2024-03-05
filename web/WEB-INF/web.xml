@@ -8,6 +8,18 @@
         <servlet-name>CtrlEmpresa</servlet-name>
         <servlet-class>Controller.CtrlEmpresa</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CtrlEvaluacion</servlet-name>
+        <servlet-class>Controller.CtrlEvaluacion</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CtrlCompetencia</servlet-name>
+        <servlet-class>Controller.CtrlCompetencia</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CtrlPonderacion</servlet-name>
+        <servlet-class>Controller.CtrlPonderacion</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CtrlLogin</servlet-name>
         <url-pattern>/CtrlLogin</url-pattern>
@@ -15,6 +27,18 @@
     <servlet-mapping>
         <servlet-name>CtrlEmpresa</servlet-name>
         <url-pattern>/CtrlEmpresa</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CtrlEvaluacion</servlet-name>
+        <url-pattern>/CtrlEvaluacion</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CtrlCompetencia</servlet-name>
+        <url-pattern>/CtrlCompetencia</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CtrlPonderacion</servlet-name>
+        <url-pattern>/CtrlPonderacion</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

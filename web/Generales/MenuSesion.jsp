@@ -27,7 +27,7 @@
         Usuario usuSesion = (Usuario) session.getAttribute("usuario");
 
         MenuDao dao = new MenuDao();
-        List<MenuDto> lstMenu = dao.geMenu(usuSesion.getId());
+        List<MenuDto> lstMenu = dao.geMenu(usuSesion.getIdTipoUsuario());
 
     %>
     <body>
