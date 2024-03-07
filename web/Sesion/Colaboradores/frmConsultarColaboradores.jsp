@@ -11,7 +11,27 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
+    
+    <script>
+        consultaInicialColaboradores();
+        
+    </script>
     <body>
-        <h1>Consultar Colaboradores</h1>
+        <input type="text" id="txtIdEmpresaColaborador" value="1" hidden="">
+        <table id="tblColaboradoresContent" class="table">
+        <thead>
+            <tr>
+                <th hidden="true">ID</th>
+                <th >NOMBRE</th>
+                 <th>PUESTO</th>
+                 <th>EMPRESA</th>
+               
+               
+            </tr>
+        </thead>
+        <tbody id="tblColaboradores">
+            
+        </tbody>
+    </table>
     </body>
 </html>

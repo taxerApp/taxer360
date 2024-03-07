@@ -23,6 +23,12 @@ $(document).on("click", "#frmConsultarEmpresa", function () {
 });
 //fin ventanas empresa
 // ventanas para colaboradores
+
+$(document).on("click", "#frmRegistrarColaboradores", function () {
+    
+ $("#dvContenedorSesion").load('Sesion/Colaboradores/frmRegistrarColaboradores.jsp?id=0');
+});
+
 $(document).on("click", "#frmConsultarColaboradores", function () {
       
  $("#dvContenedorSesion").load('Sesion/Colaboradores/frmConsultarColaboradores.jsp');

@@ -73,4 +73,52 @@ public class PonderacionDao  extends Conexion {
         return lstFiguraPuesto;
         
     }
+    
+    public String registraPonderacion(int idEmpresa,String figuraPuesto, double ponderacion) {
+        Connection Cn = getConexion();
+        CallableStatement ps = null;
+        ResultSet rs = null;
+        String respuesta = "";
+        try {
+            String squl = "select registraPonderacion(?,?,?) as resp";
+            ps = Cn.prepareCall(squl);
+            ps.setInt(1, idEmpresa);
+            ps.setString(2, figuraPuesto);
+            ps.setDouble(3, ponderacion);
+           
+
+            try {
+                ps.execute();
+                rs = ps.getResultSet();
+
+                while (rs.next()) {
+                    respuesta=rs.getString("resp");
+                 
+                   
+
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        } catch (SQLException e) {
+
+        } finally {
+            try {
+                Cn.close();
+                if (ps != null) {
+                    ps.close();
+                }
+
+                if (rs != null) {
+                    rs.close();
+                }
+
+            } catch (SQLException ex) {
+                Logger.getLogger(ControlAccesoDao.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return respuesta;
+
+    }
 }

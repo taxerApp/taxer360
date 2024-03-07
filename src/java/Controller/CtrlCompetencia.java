@@ -5,6 +5,7 @@
  */
 package Controller;
 
+import Dao.CompetenciaDao;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -59,8 +60,14 @@ public class CtrlCompetencia extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+         PrintWriter out = response.getWriter();
+        response.setContentType("text/html;charset=UTF-8");
         int bnd=Integer.parseInt(request.getParameter("bnd"));
-        
+        switch(bnd){
+            case 1:
+                out.print(reguistraCompetencias(request));
+                break;
+            }
     }
 
     /**
@@ -72,5 +79,20 @@ public class CtrlCompetencia extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
+    private boolean reguistraCompetencias(HttpServletRequest request) {
+        String competencias=request.getParameter("competencias");
+        boolean respuesta=false;
+        String [] competenciasArr=competencias.split(",");
+        int idEmpresa=Integer.parseInt(request.getParameter("idEmpresa"));
+        System.out.println("el idEvaluacione es "+idEmpresa);
+        CompetenciaDao dao = new CompetenciaDao();
+        
+        for (String competenciasArr1 : competenciasArr) {
+            respuesta=Boolean.parseBoolean(dao.registraCompetencia(idEmpresa, competenciasArr1));
+//            System.out.println("competencia: "+i+ " "+competenciasArr[i]);
+
+        }
+return respuesta;    }
 
 }

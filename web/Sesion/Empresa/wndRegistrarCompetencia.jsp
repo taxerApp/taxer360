@@ -11,8 +11,13 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         <link href="<%= request.getContextPath() %>/css/Competencia.css" rel="stylesheet" type="text/css"/>
+        
+            <%
+            int id = Integer.parseInt(request.getParameter("idEmpresa"));
+        %>
     </head>
     <body>
+        <input type="text" value="<%=id%>" id="txtIdEmpresaReCompetencia" hidden="">
         <div style="width: 100%; background:  #e5e5e5  ; color: var(--amarilloBackground); font-family: 'Antonio-Bold'; " ><label>Registrar Competencias</label></div>
     <table id="tblCompetencia" class="table">
         <%

@@ -39,7 +39,7 @@
                 $("#dvPonderacion").hide();
         </script>
     <body>
-        <input typetype="text" id="txtIdEmpresa" value="<%=id%>" hidden="">
+        <input typetype="text" id="txtIdEmpresaCEvaluacion" value="<%=id%>" hidden="">
          <div class="dvContEvaluacion">
          <table id="tblEditaEmpresa" class="table">
              <tr class="fila">
@@ -80,11 +80,11 @@
     </div>
         
         <div id="dvRCompetencias" class="dvContEvaluacion">
-            <%@include file="../../Sesion/Empresa/wndRegistrarCompetencia.jsp" %>
+            <!--%@include file="../../Sesion/Empresa/wndRegistrarCompetencia.jsp?idEmpresa="=id %>-->
              </div>
         
          <div id="dvPonderacion" class="dvContEvaluacion" >
-             <%@include file="../../Sesion/Empresa/wndPonderacion.jsp" %>
+             <%--<%@include file="../../Sesion/Empresa/wndPonderacion.jsp?idEmpresa="=id %>--%>
         </div>
     </body>
 </html>

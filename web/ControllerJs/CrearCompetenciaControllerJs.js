@@ -20,7 +20,10 @@ function guardarCompetencia() {
 //    var competencia7 = $("#txtCompetencia7").val();
 
     var camposValidos = true;
-    let competencias = [];
+//    let competencias = [];
+    var competencias = "";
+    var idEmpresa = $("#txtIdEmpresaReCompetencia").val();
+
     $(".campoInputTextCompetencia").each(function () {
 
         if ($(this).val().trim() === "") {
@@ -29,30 +32,67 @@ function guardarCompetencia() {
             camposValidos = false;
             return false;
         }
-
-        competencias.push($(this).val());
+        competencias += (competencias.trim() === "" ? $(this).val() : "," + $(this).val());
+//        competencias.push($(this).val());
     });
 
     if (camposValidos) {
-        alertify.success("Competencias Registradas Exitosamente");
+        $("#overlay").fadeIn();
+        $("#btnGuardarCompetencias").hide();
+        $.ajax({
+            type: 'POST',
+            url: 'CtrlCompetencia',
+            data: {
+                idEmpresa: idEmpresa,
+//                competencias: JSON.stringify(competencias),
+                competencias: competencias,
+                bnd: 1
+            },
+            success: function (data) {
+
+                if (data === 'true') {
+                    alertify.success("Competencias Registradas Exitosamente");
+                    $("#btnGuardarCompetencias").show();
+                    $(".campoInputTextCompetencia").each(function () {
+
+                        $(this).prop("disabled", true);
+
+//                        competencias.push($(this).val());
+                    });
+                    $("#btnGuardarCompetencias").prop("disabled", true);
+                    $("#dvPonderacion").show();
+                    $("#dvPonderacion").load("Sesion/Empresa/wndPonderacion.jsp?idEmpresa=" + idEmpresa);
+                   
+                    setTimeout(function () {
+                        getPonderaciones();
+                    }, 500);
+                   
 
 
+                } else {
+                    alertify.error(data);
+//                        alert("Ocurrió un error en el registro.");
+                    $("#btnGuardarCompetencias").show();
+                    $("#overlay").fadeOut();
+                }
 
-        alert(JSON.stringify(competencias));
-//        competencias.forEach(function (elemento, indice, array) {
-////            alert(elemento, indice);
-//        });
 
-        $(".campoInputTextCompetencia").each(function () {
-
-            $(this).prop("disabled", true);
-
-            competencias.push($(this).val());
+            },
+            error: function (data) {
+                $("#overlay").fadeOut();
+                //   mensajeError(data)
+//                    $("#overlay").fadeOut();
+            }
         });
-        $("#btnGuardarCompetencias").prop("disabled",true)
-        $("#dvPonderacion").show();
 
-        getPonderaciones()
+//        alertify.success("Competencias Registradas Exitosamente");
+
+
+
+//        alert(JSON.stringify(competencias));
+
+
+
     }
 
 }

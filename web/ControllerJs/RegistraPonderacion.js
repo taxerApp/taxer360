@@ -12,26 +12,76 @@ $(document).ready(function () {
 
 function guardarPonderacion() {
 
-var camposValidos=true;
-var totalPonderacion = $("#txtTotalPonderacion").val();
-var ponderacion =[];
-$(".campoInputPorcenPonde").each(function () {
+    var camposValidos = true;
+    var totalPonderacion = $("#txtTotalPonderacion").val();
+    var idEmpresa = $("#txtIdEmpresaRePonderacion").val();
+    var ponderacion = "";
+    var figuraPuesto = "";
+    $(".campoInputTextPonde").each(function () {
+        figuraPuesto += (figuraPuesto.trim() === "" ? $(this).val() : "," + $(this).val());
+    });
+    $(".campoInputPorcenPonde").each(function () {
 
         if ($(this).val().trim() === "") {
             alertify.warning("Todos los campos son obligatorios");
             camposValidos = false;
             return false;
         }
+        ponderacion += (ponderacion.trim() === "" ? $(this).val() : "," + $(this).val());
 
-        ponderacion.push($(this).val());
+
     });
-    
-    if(camposValidos){
-//        alert(totalPonderacion)
+
+    if (camposValidos) {
+
         if (parseInt(totalPonderacion) < 100) {
             alertify.warning("La sumatoria de los porcentajes debe ser igual a 100.");
 
         } else {
+
+            $("#overlay").fadeIn();
+            $("#btnRegistraPonderacion").hide();
+            $.ajax({
+                type: 'POST',
+                url: 'CtrlPonderacion',
+                data: {
+                    idEmpresa: idEmpresa,
+                    ponderacion: ponderacion,
+                    figuraPuesto: figuraPuesto,
+                    bnd: 2
+                },
+                success: function (data) {
+
+                    if (data === 'true') {
+                        alertify.success("Competencias Registradas Exitosamente");
+                        $("#btnRegistraPonderacion").show();
+                        $(".campoInputPorcenPonde").each(function () {
+
+                            $(this).prop("disabled", true);
+
+                        });
+//                    $("#btnRegistraPonderacion").prop("disabled", true);
+                        $("#overlay").fadeOut();
+                        $("#wndCreaEvaluacion").dialog("close");
+                        $("#dvContenedorSesion").load('Sesion/Colaboradores/frmRegistrarColaboradores.jsp?id=' + idEmpresa);
+
+
+                    } else {
+                        alertify.error(data);
+                        $("#btnRegistraPonderacion").show();
+                        $("#overlay").fadeOut();
+                    }
+
+
+                },
+                error: function (data) {
+                    $("#overlay").fadeOut();
+
+                }
+            });
+
+
+
             alertify.success("Ponderaciones Registradas Exitosamente");
 
         }
@@ -52,7 +102,7 @@ $(document).on("keyup", ".campoInputPorcenPonde", function (e) {
             txtTotalPonderacion.val(parseInt(txtTotalPonderacion.val(), 10) - parseInt(valor, 10));
             $(this).val("")
             if (!showAlerta) {
-                 alertify.error("La sumatoria no puede ser mayor al 100%");
+                alertify.error("La sumatoria no puede ser mayor al 100%");
 //                alert("No puede ser mas de 100");
                 showAlerta = true;
             }

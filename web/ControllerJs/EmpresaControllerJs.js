@@ -236,6 +236,28 @@ function habilitaInabilitaEditaEmpreda(bool) {
 /*Modal de crear Evaluacion*/
 
 
+function wndConsultarColaboradores(id, empresa) {
+    cancelarEditaEmpresa();
+    $("#overlay").fadeIn();
+    $("#wndConsultarColaboradores").dialog({
+        width: '30%',
+        height: 300,
+        show: "blind",
+        hide: "blind",
+        resizable: "false",
+        my: "center",
+        at: "center",
+        of: window,
+        modal: "true",
+        open: function (event, ui) {
+            $('#wndConsultarColaboradores').load("Sesion/Colaboradores/frmConsultarColaboradores.jsp?id=" + id + "&&empresa=" + empresa.replaceAll(" ", "|"), function () {
+                // Esta función se ejecuta cuando se termina de cargar la modal
+                $("#overlay").fadeOut();
+            });
+        },
+        close: function () {}
+    });
+}
 function wndCreaEvaluacion(id, empresa) {
     cancelarEditaEmpresa();
     $("#overlay").fadeIn();

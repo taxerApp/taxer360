@@ -6,65 +6,78 @@
 
 
 $(document).ready(function () {
-    
-    
+
+
 });
 $(document).on("click", "#btnCrearEvaluacion", function (e) {
-alert(); 
+
     var periodo = $("#txtPeriodo").val();
     var fInicio = $("#fInicioEvaluacion").val();
     var fFin = $("#fTerminoEvaluacion").val();
-    var idEmpresa = $("#txtIdEmpresa").val();
+    var idEmpresa = $("#txtIdEmpresaCEvaluacion").val();
 
+//alert(idEmpresa)
     if (periodo.trim() === "" || fInicio.trim() === "" || fFin.trim() === "") {
-        alertify.warning("Todos los campos son obligatorios");
+        alertify.warning("Todos los campos son obligatorios.");
 
     } else {
-        $.ajax({
-            type: 'POST',
-            url: 'CtrlEvaluacion',
-            data: {
-                idEmpresa: idEmpresa,
-                periodo: periodo,
-                fInicio: fInicio,
-                fFin: fFin,
-                bnd: 1
-            },
-            success: function (data) {
+        if (Date.parse(fInicio) > Date.parse(fFin)) {
+            alertify.warning("La fecha de término no puede ser mayor a la fecha de inicio.");
 
-                if (data === 'true') {
-                    alertify.success("La evaluación se registró exitosamente.");
+        } else {
+            $("#overlay").fadeIn();
+            $("#btnCrearEvaluacion").hide();
+            $.ajax({
+                type: 'POST',
+                url: 'CtrlEvaluacion',
+                data: {
+                    idEmpresa: idEmpresa,
+                    periodo: periodo,
+                    fInicio: fInicio,
+                    fFin: fFin,
+                    bnd: 1
+                },
+                success: function (data) {
+
+                    if (data === 'true') {
+                        alertify.success("La evaluación se registró exitosamente.");
 //                        alert("La empresa se registró exitosamente.")
 //                    if (window.location = "Sesion.jsp") {
 //
 //                    }
+                        $("#btnCrearEvaluacion").show();
+                        $("#txtPeriodo").prop('disabled', true);
+                        $("#fInicioEvaluacion").prop('disabled', true);
+                        $("#fTerminoEvaluacion").prop('disabled', true);
+                        $("#btnCrearEvaluacion").prop('disabled', true);
 
-                    $("#txtPeriodo").prop('disabled', true);
-                    $("#fInicioEvaluacion").prop('disabled', true);
-                    $("#fTerminoEvaluacion").prop('disabled', true);
-                    $("#btnCrearEvaluacion").prop('disabled', true);
-                  
-                    $("#dvRCompetencias").show();
+                        $("#dvRCompetencias").load("Sesion/Empresa/wndRegistrarCompetencia.jsp?idEmpresa=" + idEmpresa);
 
-                    setTimeout(function () {
-                        $("#txtCompetencia1").focus();
-                        $("#txtCompetencia1").select();
-                    }, 10)
+                        $("#dvRCompetencias").show();
 
-                } else {
-                    alertify.error(data);
+                        setTimeout(function () {
+                            $("#txtCompetencia1").focus();
+                            $("#txtCompetencia1").select();
+                        }, 1000);
+                        $("#overlay").fadeOut();
+                    } else {
+                        alertify.error(data);
+                             $("#btnCrearEvaluacion").show();
+
 //                        alert("Ocurrió un error en el registro.");
+                        $("#overlay").fadeOut();
+                    }
+
+
+                },
+                error: function (data) {
                     $("#overlay").fadeOut();
-                }
-
-
-            },
-            error: function (data) {
-                $("#overlay").fadeOut();
-                //   mensajeError(data)
+                    //   mensajeError(data)
 //                    $("#overlay").fadeOut();
-            }
-        });
+                }
+            });
+        }
+
     }
 
 

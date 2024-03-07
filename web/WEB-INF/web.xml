@@ -20,6 +20,14 @@
         <servlet-name>CtrlPonderacion</servlet-name>
         <servlet-class>Controller.CtrlPonderacion</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CtrlCargarExcelColaboradores</servlet-name>
+        <servlet-class>Controller.CtrlCargarExcelColaboradores</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CtrlColaboradores</servlet-name>
+        <servlet-class>Controller.CtrlColaboradores</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CtrlLogin</servlet-name>
         <url-pattern>/CtrlLogin</url-pattern>
@@ -39,6 +47,14 @@
     <servlet-mapping>
         <servlet-name>CtrlPonderacion</servlet-name>
         <url-pattern>/CtrlPonderacion</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CtrlCargarExcelColaboradores</servlet-name>
+        <url-pattern>/CtrlCargarExcelColaboradores</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CtrlColaboradores</servlet-name>
+        <url-pattern>/CtrlColaboradores</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

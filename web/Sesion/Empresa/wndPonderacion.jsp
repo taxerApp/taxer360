@@ -13,9 +13,12 @@
         <title>JSP Page</title>
         <link href="<%=request.getContextPath()%>/css/Ponderacion.css" rel="stylesheet" type="text/css"/>
     </head>
+      <%
+            int id = Integer.parseInt(request.getParameter("idEmpresa"));
+        %>
     <body>
                 <div style="width: 100%; background:  #e5e5e5  ; color: var(--amarilloBackground); font-family: 'Antonio-Bold'; " ><label>Registrar Ponderaciones:</label></div>
-
+ <input type="text" value="<%=id%>" id="txtIdEmpresaRePonderacion" hidden="">
                 <table class="table" id="tblPonderacion">
         
         </table>

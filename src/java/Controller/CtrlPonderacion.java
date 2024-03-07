@@ -5,6 +5,7 @@
  */
 package Controller;
 
+import Dao.CompetenciaDao;
 import Dao.PonderacionDao;
 import Dto.FiguraPuestoDto;
 import java.io.IOException;
@@ -33,7 +34,7 @@ public class CtrlPonderacion extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -71,8 +72,9 @@ public class CtrlPonderacion extends HttpServlet {
             case 1:
                 out.print(pintaCamposPonderacion(request));
                 break;
-
-           
+            case 2:
+                out.print(guardaPonderacion(request));
+                break;
 
         }
     }
@@ -88,24 +90,43 @@ public class CtrlPonderacion extends HttpServlet {
     }// </editor-fold>
 
     private String pintaCamposPonderacion(HttpServletRequest request) {
-        String respuesta="";
+        String respuesta = "";
         PonderacionDao dao = new PonderacionDao();
-        List<FiguraPuestoDto> lstFigura=dao.getFiguraPuesto();
-        
-        for(int i=0;i<lstFigura.size();i++){
-          respuesta+="    <tr class=\"fila\">\n" +
-"                <td style=\"width: 70%\" class=\"celda\">\n" +
-"                    <label>Rol:</label>\n" +
-"                    <input type=\"text\" value='"+lstFigura.get(i).getFigura()+"' class=\"campoInputTextE\" disabled=\"\">\n" +
-"                </td>\n" +
-"                \n" +
-"                <td style=\"width: 30%\" class=\"celda\">\n" +
-"                    <label>Ponderación:</label>\n" +
-"                    <input type=\"text\" class=\"campoInputPorcenPonde\" id=\"txt"+lstFigura.get(i).getFigura().replaceAll(" ", "")+"\">\n" +
-"                </td>\n" +
-"            </tr>"  ;
+        List<FiguraPuestoDto> lstFigura = dao.getFiguraPuesto();
+
+        for (int i = 0; i < lstFigura.size(); i++) {
+            respuesta += "    <tr class=\"fila\">\n"
+                    + "                <td style=\"width: 70%\" class=\"celda\">\n"
+                    + "                    <label style=\"font-size: .8rem; font-family: 'Antonio-Regular';\" >Rol:</label>\n"
+                    + "                    <input type=\"text\" value='" + lstFigura.get(i).getFigura() + "' class=\"campoInputTextPonde\" disabled=\"\">\n"
+                    + "                </td>\n"
+                    + "                \n"
+                    + "                <td style=\"width: 30%\" class=\"celda\">\n"
+                    + "                    <label style=\"font-size: .8rem; font-family: 'Antonio-Regular'\">Ponderación:</label>\n"
+                    + "                    <input type=\"text\" class=\"campoInputPorcenPonde\" id=\"txt" + lstFigura.get(i).getFigura().replaceAll(" ", "") + "\">\n"
+                    + "                </td>\n"
+                    + "            </tr>";
         }
-return respuesta;
+        return respuesta;
+    }
+
+    private boolean guardaPonderacion(HttpServletRequest request) {
+        String ponderacion = request.getParameter("ponderacion");
+        String figuraPuesto = request.getParameter("figuraPuesto");
+        int idEmpresa = Integer.parseInt(request.getParameter("idEmpresa"));
+
+        boolean respuesta = false;
+        String[] ponderacionArr = ponderacion.split(",");
+        String[] figuraPuestoArr = figuraPuesto.split(",");
+        System.out.println("el idEvaluacione es " + idEmpresa);
+        PonderacionDao dao = new PonderacionDao();
+
+        for (int i = 0; i < ponderacionArr.length; i++) {
+            respuesta = Boolean.parseBoolean(dao.registraPonderacion(idEmpresa, figuraPuestoArr[i], Double.parseDouble(ponderacionArr[i])));
+//            System.out.println("competencia: "+i+ " "+competenciasArr[i]);
+
+        }
+        return respuesta;
     }
 
 }

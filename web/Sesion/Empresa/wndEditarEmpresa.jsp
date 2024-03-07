@@ -37,8 +37,12 @@
         <div id="dvContEditaEmpresa">
             <%
             if(!status.equals("0")){%>
-             <div id="dvCrearNuevaEvaluacion"> <input type="button" value="Crear Evaluacion" class="btnEditaEmpresaModal" onclick="wndCreaEvaluacion(<%=id%>,<%="'"+empresa+"'"%>)"></div>
- 
+             <div id="dvCrearNuevaEvaluacion"> 
+                 <input type="button" value="Consultar Colaboradores" class="btnConsultaColaboradores" onclick="wndConsultarColaboradores(<%=id%>,<%="'"+empresa+"'"%>)">
+                 <input type="button" value="Crear Evaluacion" class="btnEditaEmpresaModal" onclick="wndCreaEvaluacion(<%=id%>,<%="'"+empresa+"'"%>)">
+             </div>
+            
+
            <% }
             %>
              <div id="overlay">

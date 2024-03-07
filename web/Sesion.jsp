@@ -82,6 +82,10 @@
        <!--ponderacion-->
        <script src="<%= request.getContextPath()%>/ControllerJs/RegistraPonderacion.js" type="text/javascript"></script>
        <!--fin ponderacion-->
+       
+       <!--para colaboradores-->
+       <script src="<%= request.getContextPath()%>/ControllerJs/ColaboradoresControllerJs.js" type="text/javascript"></script>
+       <!--fin colaboradores-->
     </head>
     <%
 
@@ -118,3 +122,4 @@
 <div id="wndReporteIndividual" class="ventana" title="Reporte Individual" style="background: white;"></div>
 <div id="wndEditaEmpresa" class="ventana" title="Editar Empresa" style="background: white;"></div>
 <div id="wndCreaEvaluacion" class="ventana" title="Crear Evaluación" style="background: white;"></div>
+<div id="wndConsultarColaboradores" class="ventana" title="Consultar Colaboradores" style="background: white;"></div>
