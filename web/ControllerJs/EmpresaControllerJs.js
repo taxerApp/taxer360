@@ -190,6 +190,53 @@ function consultaInicialEmpresa() {
     });
 }
 
+
+function consultaInicialEvaluaciones() {
+ 
+    var idEmpresa = $("#txtIdEmpresa").val();
+
+    $("#overlay").fadeIn();
+    $.ajax({
+        type: 'POST',
+        url: 'CtrlEmpresa',
+        data: {
+            bnd: 4,
+            idEmpresa: idEmpresa
+        },
+        success: function (data) {
+
+            $("#tblEmpresaContent").dataTable().fnDestroy();
+            $("#tblEmpresa").html(data);
+
+            $("#tblEmpresaContent").dataTable({
+                "bPaginate": true,
+                "bProcessing": true,
+//                "sAjaxSource": data,
+                "bLengthChange": true,
+                "bFilter": false,
+                "searching": true,
+                "bSort": true,
+                "lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "Todos"]],
+                "bAutoWidth": true,
+
+                language: {
+                    url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/es-ES.json',
+                }
+            });
+
+
+            $("#overlay").fadeOut();
+
+        },
+        error: function (data) {
+            $("#overlay").fadeOut();
+            //   mensajeError(data)
+
+            $("#overlay").fadeOut();
+        }
+    });
+}
+
 $(document).on("click", "#btnHabilitaEdiEmpresa", function (e) {
     var valorBoton = $(this).val();
     if (valorBoton === "Editar") {

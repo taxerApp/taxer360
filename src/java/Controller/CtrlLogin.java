@@ -72,6 +72,10 @@ public class CtrlLogin extends HttpServlet {
             case 1:
                 out.print(login(request));
                 break;
+                
+            case 2:
+                cerrarSesion(request);
+                break;
             
   
         }
@@ -106,4 +110,11 @@ public class CtrlLogin extends HttpServlet {
             return usuarioValido;
     }
 
+  private void cerrarSesion(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        if (session != null) {
+            session.invalidate();
+            
+        }
+    }
 }

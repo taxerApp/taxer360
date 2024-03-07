@@ -82,3 +82,33 @@ function wndPRueba() {
         }
     });
 }
+
+
+$(document).on("click", "#frmCerrarSesion", function (e) {
+alert();
+            cerrarSesion();
+
+});
+
+function cerrarSesion() {
+    $.ajax({
+        type: 'POST',
+        url: 'CtrlLogin',
+        data: {
+            bnd: 2,
+        },
+        success: function (data) {
+//                $('#resultado').html(data);
+            window.location = "Login.jsp";
+        },
+        error: function (data) {
+
+        }
+    });
+}
+
+//ventana CargarCuestionarios
+function verEvaluaciones(idEmpresa){
+    
+ $("#dvContenedorSesion").load('Sesion/Evaluacion/frmVerEvaluaciones.jsp?idEmpresa='+idEmpresa);
+ }

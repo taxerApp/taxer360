@@ -82,6 +82,10 @@ public class CtrlEmpresa extends HttpServlet {
             case 3:
                 out.print(actualizaEmpresa(request));
                 break;
+                
+                 case 4:
+                out.print(consultaEmpresaPEvaluaciones(request));
+                break;
 
         }
     }
@@ -193,6 +197,36 @@ public class CtrlEmpresa extends HttpServlet {
 
 
     }
+
+    private String consultaEmpresaPEvaluaciones(HttpServletRequest request) {
+  String rspuesta="";
+        List<EmpresaDto> lstEmpresa = new ArrayList<EmpresaDto>();
+        int idEmpresa = Integer.parseInt(request.getParameter("idEmpresa"));
+        int bnd = Integer.parseInt(request.getParameter("bnd"));
+        EmpresaDao dao = new EmpresaDao();
+       lstEmpresa= dao.consultaEmpresa(idEmpresa, bnd);
+       
+         for (int i = 0; i < lstEmpresa.size(); i++) {
+            rspuesta += "<tr >"
+                    + "<td hidden='true'>" + lstEmpresa.get(i).getId() + "</td>"
+                    + "<td>" + lstEmpresa.get(i).getEmpresa()+ "</td>"
+                    + "<td>" + lstEmpresa.get(i).getRfc()+ "</td>"
+                    + "<td>" + lstEmpresa.get(i).getRazonSocial()+ "</td>"
+                    + "<td>" + lstEmpresa.get(i).getCorreo()+ "</td>";
+            
+            if (lstEmpresa.get(i).getStatus()==1) {
+//                rspuesta += "<td style='background: green; color:white;'>";
+                rspuesta += "<td>";
+            } else {
+                rspuesta += "<td style='background: red; color:white;'>";
+            }
+            rspuesta += (lstEmpresa.get(i).getStatus()==1?"Activa":"Inactiva")+ "</td>"
+
+                    + "<td style='color:black;' onclick=\"verEvaluaciones("+lstEmpresa.get(i).getId()+");\"><center><i class='fa fa-eye' style='color:#ffca2c'></i></center></td>"
+                    + "</tr>";
+        }
+        System.out.println(""+rspuesta);
+        return rspuesta;    }
 
 
 }
