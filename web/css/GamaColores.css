@@ -11,4 +11,5 @@ and open the template in the editor.
 :root {
   --colorFondoForm: #f7f7f7;  /*Se ocupa para color de fondo (gris tenue)*/
   --amarilloBackground: #ffca2c; /*Se ocupa para colores de fondo y para color de letra*/
+  --grisEncabezados:   #dfdddc ; /*Se ocupa para encabezados del acordeon*/
 }

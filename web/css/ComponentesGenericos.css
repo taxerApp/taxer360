@@ -41,4 +41,15 @@ and open the template in the editor.
     margin-top: 2%;
 }
 
+.lnkNavegacion{
+    text-decoration: underline;
+    color: var(--amarilloBackground);
+    padding-left: 1%;
+    font-size: .8rem;
+}
 
+.mayorq{
+    color: var(--amarilloBackground);
+    margin-left: 1%;
+     font-size: .8rem;
+}

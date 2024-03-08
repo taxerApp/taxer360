@@ -61,27 +61,7 @@ $(document).ready(function () {
 
 });
 
-function wndEditaEmpresa(id, empresa, rfc, razonSocial, correo, status) {
-    $("#overlay").fadeIn();
-    $("#wndEditaEmpresa").dialog({
-        width: '30%',
-        height: 300,
-        show: "blind",
-        hide: "blind",
-        resizable: "false",
-        my: "center",
-        at: "center",
-        of: window,
-        modal: "true",
-        open: function (event, ui) {
-            $('#wndEditaEmpresa').load("Sesion/Empresa/wndEditarEmpresa.jsp?id=" + id + "&&empresa=" + empresa.replaceAll(" ", "|") + "&&rfc=" + rfc + "&&razonSocial=" + razonSocial.replaceAll(" ", "|") + "&&correo=" + correo + "&&status=" + status, function () {
-                // Esta función se ejecuta cuando se termina de cargar la modal
-                $("#overlay").fadeOut();
-            });
-        },
-        close: function () {}
-    });
-}
+
 
 
 function cancelarEditaEmpresa() {
@@ -191,7 +171,7 @@ function consultaInicialEmpresa() {
 }
 
 
-function consultaInicialEvaluaciones() {
+function consultaInicialEmpresaEvaluaciones() {
  
     var idEmpresa = $("#txtIdEmpresa").val();
 
@@ -280,53 +260,6 @@ function habilitaInabilitaEditaEmpreda(bool) {
 
 
 
-/*Modal de crear Evaluacion*/
-
-
-function wndConsultarColaboradores(id, empresa) {
-    cancelarEditaEmpresa();
-    $("#overlay").fadeIn();
-    $("#wndConsultarColaboradores").dialog({
-        width: '30%',
-        height: 300,
-        show: "blind",
-        hide: "blind",
-        resizable: "false",
-        my: "center",
-        at: "center",
-        of: window,
-        modal: "true",
-        open: function (event, ui) {
-            $('#wndConsultarColaboradores').load("Sesion/Colaboradores/frmConsultarColaboradores.jsp?id=" + id + "&&empresa=" + empresa.replaceAll(" ", "|"), function () {
-                // Esta función se ejecuta cuando se termina de cargar la modal
-                $("#overlay").fadeOut();
-            });
-        },
-        close: function () {}
-    });
-}
-function wndCreaEvaluacion(id, empresa) {
-    cancelarEditaEmpresa();
-    $("#overlay").fadeIn();
-    $("#wndCreaEvaluacion").dialog({
-        width: '30%',
-        height: 300,
-        show: "blind",
-        hide: "blind",
-        resizable: "false",
-        my: "center",
-        at: "center",
-        of: window,
-        modal: "true",
-        open: function (event, ui) {
-            $('#wndCreaEvaluacion').load("Sesion/Empresa/wndCrearEvaluacion.jsp?id=" + id + "&&empresa=" + empresa.replaceAll(" ", "|"), function () {
-                // Esta función se ejecuta cuando se termina de cargar la modal
-                $("#overlay").fadeOut();
-            });
-        },
-        close: function () {}
-    });
-}
 function cancelarCrearEvaluacion() {
 
     $("#wndCreaEvaluacion").dialog("close");

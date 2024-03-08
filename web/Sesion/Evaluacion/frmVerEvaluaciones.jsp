@@ -10,8 +10,27 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link href="<%= request.getContextPath() %>/css/VerEvaluaciones.css" rel="stylesheet" type="text/css"/>
+        <% int idEmpresa= Integer.parseInt(request.getParameter("idEmpresa")); %>
+        <script>
+            consultaInicialVerEvaluaciones(<%=idEmpresa%>);
+        </script>
     </head>
     <body>
-        <h1>Ver evaluaciones</h1>
+        <br><br>
+        <table id="tblEvaluacionContent" class="table" >
+        <thead>
+            <tr>
+                <th hidden="true">ID</th>
+                 <th>PERIODO</th>
+                 <th>FECHA DE INICIO</th>
+                 <th>FECHA DE TÉRMINO</th>
+                 <th>CUESTIONARIOS</th>
+            </tr>
+        </thead>
+        <tbody id="tblEvaluacion">
+            
+        </tbody>
+    </table>
     </body>
 </html>

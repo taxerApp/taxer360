@@ -28,6 +28,14 @@
         <servlet-name>CtrlColaboradores</servlet-name>
         <servlet-class>Controller.CtrlColaboradores</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CtrlCuestionario</servlet-name>
+        <servlet-class>Controller.CtrlCuestionario</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CtrlArbolNavegacion</servlet-name>
+        <servlet-class>Controller.CtrlArbolNavegacion</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CtrlLogin</servlet-name>
         <url-pattern>/CtrlLogin</url-pattern>
@@ -55,6 +63,14 @@
     <servlet-mapping>
         <servlet-name>CtrlColaboradores</servlet-name>
         <url-pattern>/CtrlColaboradores</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CtrlCuestionario</servlet-name>
+        <url-pattern>/CtrlCuestionario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CtrlArbolNavegacion</servlet-name>
+        <url-pattern>/CtrlArbolNavegacion</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

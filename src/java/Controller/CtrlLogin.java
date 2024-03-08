@@ -6,9 +6,12 @@
 package Controller;
 
 import Dao.ControlAccesoDao;
+import Dto.PantallaDto;
 import Dto.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -95,7 +98,7 @@ public class CtrlLogin extends HttpServlet {
         ControlAccesoDao dao = new ControlAccesoDao();
         String correo=request.getParameter("usuario");
         String pw=request.getParameter("pw");
-       
+       List<PantallaDto> lstPantalla = new ArrayList<PantallaDto>();
         Usuario usu=dao.login(correo,pw );
         
         HttpSession session = request.getSession();
@@ -103,6 +106,7 @@ public class CtrlLogin extends HttpServlet {
         
         if(usu.getNombreDeUsuario()!= null && !usu.getNombreDeUsuario().equals("")){
             usuarioValido = true;
+             session.setAttribute("lstPantalla", lstPantalla);
         }else{
             usuarioValido= false;
         }

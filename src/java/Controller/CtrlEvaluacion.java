@@ -6,8 +6,10 @@
 package Controller;
 
 import Dao.EvaluacionDao;
+import Dto.EvaluacionDto;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -64,10 +66,13 @@ public class CtrlEvaluacion extends HttpServlet {
         PrintWriter out = response.getWriter();
         response.setContentType("text/html;charset=UTF-8");
         int bnd = Integer.parseInt(request.getParameter("bnd"));
-        System.out.println("dadadasa");
+
         switch (bnd) {
             case 1:
                 out.print(creaEvaluacion(request));
+                break;
+            case 2:
+                out.print(consultarEvaluacion(request));
                 break;
 
         }
@@ -92,6 +97,19 @@ public class CtrlEvaluacion extends HttpServlet {
         boolean resp = dao.registraEvaluacion(idEmpresa, periodo, fInicio, fFin);
 
         return resp;
+    }
+
+    private String consultarEvaluacion(HttpServletRequest request) {
+        int idEmpresa = Integer.parseInt(request.getParameter("idEmpresa"));
+        String respuesta = "";
+        EvaluacionDao dao = new EvaluacionDao();
+        List<EvaluacionDto> lstEvaluacion = dao.consultaEvaluaciones(idEmpresa);
+
+        for (EvaluacionDto evaluacion : lstEvaluacion) {
+       respuesta+="<tr><td hidden='true'>"+evaluacion.getId()+"</td> <td>"+evaluacion.getPeriodo()+"</td> <td>"+evaluacion.getfInicio()+"</td><td>"+evaluacion.getfFin()+"</td><td onclick='cargarCuestionarios("+evaluacion.getId()+")'><center><i class='fa fa-plus' style='color:#ffca2c'></i></center></td></tr>";
+        }
+
+        return respuesta;
     }
 
 }

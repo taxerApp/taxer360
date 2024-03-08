@@ -62,7 +62,7 @@ $(document).on("click", "#btnCrearEvaluacion", function (e) {
                         $("#overlay").fadeOut();
                     } else {
                         alertify.error(data);
-                             $("#btnCrearEvaluacion").show();
+                        $("#btnCrearEvaluacion").show();
 
 //                        alert("Ocurrió un error en el registro.");
                         $("#overlay").fadeOut();
@@ -83,31 +83,44 @@ $(document).on("click", "#btnCrearEvaluacion", function (e) {
 
 
 });
-//function crearEvaluacion(){
-//  var periodo=  $("#txtPeriodo").val();
-//  var fInicioEvaluacion=  $("#fInicioEvaluacion").val();
-//  var fFinEvaluacion=  $("#fTerminoEvaluacion").val();
-//  
-//  if(periodo.trim()==="" || fInicioEvaluacion.trim()==="" || fFinEvaluacion.trim()===""){
-//     //  alert("Todos los campos son obligatorios.");
-//           alertify.warning('Todos los campos son obligatorios.');
-//  }else{
-////     alert(fInicioEvaluacion);
-////  alert(fFinEvaluacion);
-////  alert(periodo); 
-//    alertify.success('La evaluación se registró con éxito.');
-//
-//
-//
-//
-//
-//        
-//      
-////      $("#dvPonderacion").show();
-////    alertify.error('error');
-//
-//  }
-//  
-//    
-//}
 
+function consultaInicialVerEvaluaciones(idEmpresa) {
+    $("#overlay").fadeIn();
+    $.ajax({
+        type: 'POST',
+        url: 'CtrlEvaluacion',
+        data: {
+            bnd: 2,
+            idEmpresa: idEmpresa
+        },
+        success: function (data) {
+//            alert(data)
+            $("#tblEvaluacionContent").dataTable().fnDestroy();
+            $("#tblEvaluacion").html(data);
+
+            $("#tblEvaluacionContent").dataTable({
+                "bPaginate": true,
+                "bProcessing": true,
+//                "sAjaxSource": data,
+                "bLengthChange": true,
+                "bFilter": false,
+                "searching": true,
+                "bSort": true,
+                "lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "Todos"]],
+                "bAutoWidth": true,
+
+                language: {
+                    url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/es-ES.json',
+                }
+            });
+
+
+            $("#overlay").fadeOut();
+
+        },
+        error: function (data) {
+            $("#overlay").fadeOut();
+
+        }
+    });
+}

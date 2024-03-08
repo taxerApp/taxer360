@@ -16,7 +16,7 @@
     <link href="<%= request.getContextPath()%>/css/ConsultarEmpresa.css" rel="stylesheet" type="text/css"/>
    <script>
    
-          consultaInicialEvaluaciones();
+          consultaInicialEmpresaEvaluaciones();
            
     </script>
     <body>
@@ -25,7 +25,7 @@
         <!--<input type="text" id="txtTipoUsuario" hidden="true" value="%= usu.getIdTipoUsuario()%>" >-->
        
         <div style="margin-top: 8%;"></div>
-        <table id="tblEmpresaContent" class="table">
+        <table id="tblEmpresaContent" class="table" style="position:relative; z-index:0">
         <thead>
             <tr  >
                 <th hidden="true">ID</th>

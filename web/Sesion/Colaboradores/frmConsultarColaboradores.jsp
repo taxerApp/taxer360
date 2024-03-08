@@ -11,6 +11,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
+    <link href="<%= request.getContextPath() %>/css/ConsultarColaboradores.css" rel="stylesheet" type="text/css"/>
+  
     
     <script>
         consultaInicialColaboradores();

@@ -1,0 +1,55 @@
+body{
+   color:var(--amarilloBackground);
+   font-family: 'Inter-Regular';  
+   background: var(--colorFondoForm); 
+}
+.table{
+    border: solid 1px var(--amarilloBackground); 
+    margin-bottom: 20%;
+    width:100%;
+   
+   
+}
+label{
+    color: var(--amarilloBackground); 
+    font-size: .9rem;
+}
+tr{
+    border: solid 1px var(--amarilloBackground); 
+}
+
+th{
+    color: var(--amarilloBackground); 
+    font-size: .9rem;
+}
+td{
+    color: var(--amarilloBackground); 
+    font-size: .9rem;
+}
+
+/*.paginate_button{
+    color:var(--amarilloBackground); 
+    border: solid 1px var(--amarilloBackground); 
+}
+
+.dataTables_paginate paging_simple_numbers{
+   color:var(--amarilloBackground);   
+}
+.paginate_button_disabled {
+
+ color:var(--amarilloBackground); 
+    
+}
+.paginate_button:hover {
+ color:var(--amarilloBackground); 
+}
+.paginate_active {
+ color:var(--amarilloBackground); 
+}*/
+.paginate_button current{
+    color:red;
+}
+.dataTables_info{
+    font-size: .9rem; 
+     color: #red;  
+}

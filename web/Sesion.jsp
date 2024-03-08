@@ -16,8 +16,8 @@
         <script src="<%= request.getContextPath()%>/libs/jquery/jquery-3.7.1.js" type="text/javascript"></script>
         <script src="<%= request.getContextPath()%>/libs/jquery/jquery-3.7.1.min.js" type="text/javascript"></script>
         <!--<script src="<%= request.getContextPath()%>/ControllerJs/PrincipalControllerJs.js" type="text/javascript"></script>-->
-        <link href="<%= request.getContextPath()%>/css/Footer.css" rel="stylesheet" type="text/css"/>
-        <link href="<%= request.getContextPath()%>/css/flexslider.css" rel="stylesheet" type="text/css"/>
+        
+        <!--<link href="%= request.getContextPath()%>/css/flexslider.css" rel="stylesheet" type="text/css"/>-->
         <script src="<%= request.getContextPath()%>/libs/jquery/jquery-ui.js" type="text/javascript"></script>
         <link href="<%= request.getContextPath()%>/libs/jquery/jquery-ui.css" rel="stylesheet" type="text/css"/>
         
@@ -67,6 +67,11 @@
         <link href="<%= request.getContextPath()%>/css/GamaColores.css" rel="stylesheet" type="text/css"/> <!--Gama de colores -->
        <!--FIN GENERICOS-->
        
+       <!--HOME-->
+       <script src="<%= request.getContextPath()%>/ControllerJs/HomeControllerJS.js" type="text/javascript"></script>
+       <!--FIN HOME-->
+       
+       
        <!--EMPRESA-->
        <script src="<%= request.getContextPath()%>/ControllerJs/EmpresaControllerJs.js" type="text/javascript"></script>
        <!--FIN EMPRESA-->
@@ -86,6 +91,14 @@
        <!--para colaboradores-->
        <script src="<%= request.getContextPath()%>/ControllerJs/ColaboradoresControllerJs.js" type="text/javascript"></script>
        <!--fin colaboradores-->
+       
+       <!--cuestionarios-->
+       <script src="<%= request.getContextPath()  %>/ControllerJs/CuestionariosController.js" type="text/javascript"></script>
+       <!--fin cuestionarios-->
+       
+       <!--arbolNavegacion-->
+       <script src="<%= request.getContextPath()  %>/ControllerJs/ArbolNavegacionControllerJS.js" type="text/javascript"></script>
+       <!--fin arbol navegacion-->
     </head>
     <%
 
@@ -110,8 +123,12 @@
                 <span class="spinner"></span>
             </div>
         </div>
+        <%@include file="Generales/ArbolNavegacion.jsp" %>
         <!--fin indicador de cargando-->
-        <div id="dvContenedorSesion"><%@include file="Sesion/frmHome.jsp" %></div>
+        <!--<div id="dvContenedorSesion"><@include file="Sesion/frmHome.jsp" %></div>-->
+        <!--<div id="dvContenedorSesion"><@include file="Sesion/Evaluacion/frmCargarCuestionarios.jsp" %></div>-->
+        <div id="dvContenedorSesion"></div>
+    </body>
     </body>
     <%}%>
 
@@ -123,3 +140,6 @@
 <div id="wndEditaEmpresa" class="ventana" title="Editar Empresa" style="background: white;"></div>
 <div id="wndCreaEvaluacion" class="ventana" title="Crear Evaluación" style="background: white;"></div>
 <div id="wndConsultarColaboradores" class="ventana" title="Consultar Colaboradores" style="background: white;"></div>
+<div id="wndDetalleGraficaHome" class="ventana" title="" style="background: white;"></div>
+
+

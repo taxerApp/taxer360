@@ -11,8 +11,14 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
+    <script>
+        
+        wndDetalleGraficaHome();
+    </script>
     <body>
-        <h1 style="width: 100%; background: red;">Este es el home</h1>
-        <input type="button" value="Probar modal" id="btnModalPrueba">
+<!--        <h1 style="width: 100%; background: red;">Este es el home</h1>
+        <input type="button" value="Probar modal" id="btnModalPrueba">-->
     </body>
 </html>
+
+
