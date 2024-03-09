@@ -13,7 +13,7 @@
     </head>
     <script>
         
-        wndDetalleGraficaHome();
+        wndDetalleGraficaHome()
     </script>
     <body>
 <!--        <h1 style="width: 100%; background: red;">Este es el home</h1>

@@ -6,7 +6,10 @@
 
 
 
-
+$(document).ready(function () {
+    
+frmHome();
+});
 
 function wndDetalleGraficaHome() {
 

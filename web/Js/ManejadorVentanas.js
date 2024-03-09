@@ -21,77 +21,78 @@
  */
 //ventana home
 $(document).on("click", "#frmHome", function () {
-        pintarArbolNavegacion(1, "frmHome()", "HOME",true); //bnd,identificador,nombre pantalla,true/false si es que es pantalla principal es decir si no depende de otra
 
     frmHome();
 
 });
 
-function frmHome(){
-     $("#dvContenedorSesion").load('Sesion/frmHome.jsp');
+function frmHome() {
+    pintarArbolNavegacion(1, "frmHome()", "HOME", true); //bnd,identificador,nombre pantalla,true/false si es que es pantalla principal es decir si no depende de otra
+
+    $("#dvContenedorSesion").load('Sesion/frmHome.jsp');
 }
 //fin ventana home
 //
 //ventanas empresa
 $(document).on("click", "#frmRegistrarEmpresa", function () {
-    pintarArbolNavegacion(1, "frmRegistrarEmpresa()", "REGISTRAR EMPRESA",true); //bnd,identificador,nombre pantalla,true/false si es que es pantalla principal es decir si no depende de otra
+    pintarArbolNavegacion(1, "frmRegistrarEmpresa()", "REGISTRAR EMPRESA", true); //bnd,identificador,nombre pantalla,true/false si es que es pantalla principal es decir si no depende de otra
     frmRegistrarEmpresa();
 });
-function frmRegistrarEmpresa(){
+function frmRegistrarEmpresa() {
     $("#dvContenedorSesion").load('Sesion/Empresa/frmRegistrarEmpresa.jsp');
- 
+
 }
 $(document).on("click", "#frmConsultarEmpresa", function () {
-        pintarArbolNavegacion(1, "frmConsultarEmpresa()", "CONSULTAR EMPRESA",true); //bnd,identificador,nombre pantalla,true/false si es que es pantalla principal es decir si no depende de otra
-        frmConsultarEmpresa();
+    pintarArbolNavegacion(1, "frmConsultarEmpresa()", "CONSULTAR EMPRESA", true); //bnd,identificador,nombre pantalla,true/false si es que es pantalla principal es decir si no depende de otra
+    frmConsultarEmpresa();
 });
 
-function frmConsultarEmpresa(){
-     $("#dvContenedorSesion").load('Sesion/Empresa/frmConsultarEmpresa.jsp');
+function frmConsultarEmpresa() {
+    $("#dvContenedorSesion").load('Sesion/Empresa/frmConsultarEmpresa.jsp');
 
 }
 //fin ventanas empresa
 // ventanas para colaboradores
 
 $(document).on("click", "#frmRegistrarColaboradores", function () {
-       pintarArbolNavegacion(1, "frmRegistrarColaboradores()", "REGISTRAR COLABORADORES",true); //bnd,identificador,nombre pantalla,true/false si es que es pantalla principal es decir si no depende de otra
+    pintarArbolNavegacion(1, "frmRegistrarColaboradores()", "REGISTRAR COLABORADORES", true); //bnd,identificador,nombre pantalla,true/false si es que es pantalla principal es decir si no depende de otra
     frmRegistrarColaboradores();
 });
 
-function frmRegistrarColaboradores(){
-     $("#dvContenedorSesion").load('Sesion/Colaboradores/frmRegistrarColaboradores.jsp?id=0');
+function frmRegistrarColaboradores() {
+    $("#dvContenedorSesion").load('Sesion/Colaboradores/frmRegistrarColaboradores.jsp?id=0');
 
 }
 
 $(document).on("click", "#frmConsultarColaboradores", function () {
-   pintarArbolNavegacion(1, "frmConsultarColaboradores()", "CONSULTAR COLABORADORES",false); //bnd,identificador,nombre pantalla,true/false si es que es pantalla principal es decir si no depende de otra
+    pintarArbolNavegacion(1, "frmConsultarColaboradores()", "CONSULTAR COLABORADORES", false); //bnd,identificador,nombre pantalla,true/false si es que es pantalla principal es decir si no depende de otra
     frmConsultarColaboradores();
 });
-function frmConsultarColaboradores(){
+function frmConsultarColaboradores() {
     $("#dvContenedorSesion").load('Sesion/Colaboradores/frmConsultarColaboradores.jsp');
- 
+
 }
 //fin ventanas de Evaluacion
 
 $(document).on("click", "#frmCrearEvaluacion", function () {
-      pintarArbolNavegacion(1, "frmCrearEvaluacion()", "CREAR EVALUACIÓN",false);//bnd,identificador,nombre pantalla,true/false si es que es pantalla principal es decir si no depende de otra
+    pintarArbolNavegacion(1, "frmCrearEvaluacion()", "CREAR EVALUACIÓN", false);//bnd,identificador,nombre pantalla,true/false si es que es pantalla principal es decir si no depende de otra
     frmCrearEvaluacion();
 });
-function frmCrearEvaluacion(){
-     $("#dvContenedorSesion").load('Sesion/Evaluacion/frmCrearEvaluacion.jsp');
+function frmCrearEvaluacion() {
+    $("#dvContenedorSesion").load('Sesion/Evaluacion/frmCrearEvaluacion.jsp');
 
 }
 $(document).on("click", "#frmConsultarEvaluaciones", function () {
-         pintarArbolNavegacion(1, "frmConsultarEvaluaciones()", "CONSULTAR EVALUACIONES",true); //bnd,identificador,nombre pantalla,true/false si es que es pantalla principal es decir si no depende de otra
+    pintarArbolNavegacion(1, "frmConsultarEvaluaciones()", "CONSULTAR EVALUACIONES", true); //bnd,identificador,nombre pantalla,true/false si es que es pantalla principal es decir si no depende de otra
     frmConsultarEvaluaciones();
 });
-function frmConsultarEvaluaciones(){
-     $("#dvContenedorSesion").load('Sesion/Evaluacion/frmConsultarEvaluaciones.jsp');
+function frmConsultarEvaluaciones() {
+    $("#dvContenedorSesion").load('Sesion/Evaluacion/frmConsultarEvaluaciones.jsp');
 
 }
 //fin ventanas Evaluacion
 $(document).on("click", "#btnModalPrueba", function () {
-     
+
     wndPRueba();
 
 });
@@ -100,7 +101,7 @@ $(document).on("click", "#btnModalPrueba", function () {
 //esto es para crear modales y debe ir en el controllerJs del jsp a utilizar
 function wndPRueba() {
 
- $("#overlay").fadeIn();
+    $("#overlay").fadeIn();
     $("#wndReporteIndividual").dialog({
         width: '90%',
 //        height:'auto', 
@@ -115,7 +116,7 @@ function wndPRueba() {
         open: function (event, ui) {
             $('#wndReporteIndividual').load("PruebaGraficas.jsp", function () {
 //                   esta funcion se ejecuta cuando se termino de realizar la carga de la modal
- $("#overlay").fadeOut();
+                $("#overlay").fadeOut();
             });
         },
 
@@ -129,7 +130,7 @@ function wndPRueba() {
 
 $(document).on("click", "#frmCerrarSesion", function (e) {
 
-            cerrarSesion();
+    cerrarSesion();
 
 });
 
@@ -151,23 +152,23 @@ function cerrarSesion() {
 }
 
 //ventana CargarCuestionarios
-function verEvaluaciones(idEmpresa){
-       pintarArbolNavegacion(1, "verEvaluaciones("+idEmpresa+")", "LISTA DE EVALUACIONES",false); //bnd,identificador,nombre pantalla,true/false si es que es pantalla principal es decir si no depende de otra
+function verEvaluaciones(idEmpresa) {
+    pintarArbolNavegacion(1, "verEvaluaciones(" + idEmpresa + ")", "LISTA DE EVALUACIONES", false); //bnd,identificador,nombre pantalla,true/false si es que es pantalla principal es decir si no depende de otra
 
- $("#dvContenedorSesion").load('Sesion/Evaluacion/frmVerEvaluaciones.jsp?idEmpresa='+idEmpresa);
- }
- 
- 
- 
- function cargarCuestionarios(idEvaluacion){
-        pintarArbolNavegacion(1, "cargarCuestionarios("+idEvaluacion+")", "CARGAR CUESTIONARIOS",false);//bnd,identificador,nombre pantalla,true/false si es que es pantalla principal es decir si no depende de otra
+    $("#dvContenedorSesion").load('Sesion/Evaluacion/frmVerEvaluaciones.jsp?idEmpresa=' + idEmpresa);
+}
 
-      $("#dvContenedorSesion").load('Sesion/Evaluacion/frmCargarCuestionarios.jsp?idEvaluacion='+idEvaluacion);
 
- }
- 
- 
- 
+
+function cargarCuestionarios(idEvaluacion) {
+    pintarArbolNavegacion(1, "cargarCuestionarios(" + idEvaluacion + ")", "CARGAR CUESTIONARIOS", false);//bnd,identificador,nombre pantalla,true/false si es que es pantalla principal es decir si no depende de otra
+
+    $("#dvContenedorSesion").load('Sesion/Evaluacion/frmCargarCuestionarios.jsp?idEvaluacion=' + idEvaluacion);
+
+}
+
+
+
 /*Modal de crear Evaluacion*/
 
 
@@ -215,8 +216,8 @@ function wndCreaEvaluacion(id, empresa) {
         close: function () {}
     });
 }
- 
- function wndEditaEmpresa(id, empresa, rfc, razonSocial, correo, status) {
+
+function wndEditaEmpresa(id, empresa, rfc, razonSocial, correo, status) {
     $("#overlay").fadeIn();
     $("#wndEditaEmpresa").dialog({
         width: '40%',

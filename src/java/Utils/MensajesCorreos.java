@@ -21,5 +21,11 @@ public class MensajesCorreos {
                 + "Tus credenciales de acceso son:\n\n\n"
                 + "Usuario: ?1 \n\n"
                 +"Contraseña: ?2";
+      
+        public static String msjReenviaPw=  "Has solicitado el reenvío de tus credenciales de acceso para la plataforma Be-Learning Evaluación 360."
+                + "\n\n\n"
+                + "Tus credenciales de acceso son:\n\n\n"
+                + "Usuario: ?1 \n\n"
+                +"Contraseña: ?2";
     
 }

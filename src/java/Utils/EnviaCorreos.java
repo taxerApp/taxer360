@@ -29,4 +29,12 @@ public class EnviaCorreos {
 
         mail.enviaCorreo(msj, correo, subj);
     }
+      
+       public  void reenviaPWEmpresa(String correo, String contrasenia) {
+        SendMail mail = new SendMail();
+        String subj = "Credenciales de acceso";
+        String msj = MensajesCorreos.msjReenviaPw.replace("?1", correo).replace("?2", contrasenia);
+
+        mail.enviaCorreo(msj, correo, subj);
+    }
 }

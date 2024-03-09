@@ -13,6 +13,6 @@
     </head>
     <body>
        
-        <div id="dvArbolNavegacion" style="width: 90%; background: var(--grisEncabezados);  margin-top: 1%; margin-left: 5%; margin-right: 5%;"></div>
+        <div id="dvArbolNavegacion" style="width: 90%; background: var(--grisEncabezados);  margin-top: 1%; margin-left: 5%; margin-right: 5%;">&nbsp;</div>
     </body>
 </html>

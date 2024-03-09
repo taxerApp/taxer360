@@ -265,3 +265,30 @@ function cancelarCrearEvaluacion() {
     $("#wndCreaEvaluacion").dialog("close");
 
 }
+
+
+function renviaPw(id,correo){
+   $("#overlay").fadeIn();
+    $.ajax({
+        type: 'POST',
+        url: 'CtrlEmpresa',
+        data: {
+            idEmpresa: id,
+            correo: correo,
+            bnd:5
+        },
+        success: function (data) {
+
+            alertify.success("Se han reenviado los accesos al correo electrónico de la empresa");
+
+            $("#overlay").fadeOut();
+
+        },
+        error: function (data) {
+            $("#overlay").fadeOut();
+            //   mensajeError(data)
+
+            $("#overlay").fadeOut();
+        }
+    });  
+}

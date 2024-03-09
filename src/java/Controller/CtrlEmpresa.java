@@ -7,6 +7,7 @@ package Controller;
 
 import Dao.EmpresaDao;
 import Dto.EmpresaDto;
+import Dto.Usuario;
 import Utils.EnviaCorreos;
 import Utils.GeneraCodigoVerificacion;
 import Utils.SendMail;
@@ -86,6 +87,11 @@ public class CtrlEmpresa extends HttpServlet {
                  case 4:
                 out.print(consultaEmpresaPEvaluaciones(request));
                 break;
+                
+                 case 5:
+                     
+                     out.print(reenviaPw(request));
+                     break;
 
         }
     }
@@ -191,6 +197,11 @@ public class CtrlEmpresa extends HttpServlet {
               
         enviaCorreo.enviaCorreoNPerfilAdminEmpresa(correo, contrasenia); 
                 break;
+                
+                 case 3:
+              
+        enviaCorreo.reenviaPWEmpresa(correo, contrasenia); 
+                break;
         }
        
 
@@ -227,6 +238,18 @@ public class CtrlEmpresa extends HttpServlet {
         }
         System.out.println(""+rspuesta);
         return rspuesta;    }
+
+    private String reenviaPw(HttpServletRequest request) {
+        String respuesta="";
+        int idEmpresa=Integer.parseInt(request.getParameter("idEmpresa"));
+        
+               EmpresaDao dao = new EmpresaDao();
+             Usuario usu=  dao.getPw(idEmpresa);
+//        EnviaCorreos mail = new EnviaCorreos();
+           enviaCorreo(usu.getCorreo(),usu.getPw(),3);
+//        mail.reenviaPWEmpresa(usu.getCorreo(), usu.getPw());
+      return respuesta;
+    }
 
 
 }

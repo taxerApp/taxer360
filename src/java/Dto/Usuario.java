@@ -10,16 +10,18 @@ package Dto;
  * @author David
  */
 public class Usuario {
+
     private int id;
     private String nombreDeUsuario;
     private String tipoUsuario;
     private int status;
     private int idTipoUsuario;
-    
+    private int idEmpresa;
+    private String pw;
+    private String correo;
 
-    
-    public Usuario(){
-        
+    public Usuario() {
+
     }
 
     public int getId() {
@@ -62,8 +64,28 @@ public class Usuario {
         this.idTipoUsuario = idTipoUsuario;
     }
 
-    
-   
-  
-    
+    public int getIdEmpresa() {
+        return idEmpresa;
+    }
+
+    public void setIdEmpresa(int idEmpresa) {
+        this.idEmpresa = idEmpresa;
+    }
+
+    public String getPw() {
+        return pw;
+    }
+
+    public void setPw(String pw) {
+        this.pw = pw;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
 }

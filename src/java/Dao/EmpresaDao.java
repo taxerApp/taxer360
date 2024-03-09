@@ -8,6 +8,7 @@ package Dao;
 import Conexion.Conexion;
 import Dto.EmpresaDto;
 import Dto.MenuDto;
+import Dto.Usuario;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -27,7 +28,7 @@ public class EmpresaDao extends Conexion {
     public EmpresaDao() {
     }
 
-    public String registraEmpresa(String empresa, String rfc, String razonSocial, String correo,String pwNPerfil) {
+    public String registraEmpresa(String empresa, String rfc, String razonSocial, String correo, String pwNPerfil) {
         Connection Cn = getConexion();
         CallableStatement ps = null;
         ResultSet rs = null;
@@ -46,9 +47,7 @@ public class EmpresaDao extends Conexion {
                 rs = ps.getResultSet();
 
                 while (rs.next()) {
-                    respuesta=rs.getString("resp");
-                 
-                   
+                    respuesta = rs.getString("resp");
 
                 }
             } catch (Exception e) {
@@ -111,8 +110,8 @@ public class EmpresaDao extends Conexion {
 //        }
 //        return registro;
 //    }
-public String actualizaEmpresa(String empresa, String rfc, String razonSocial,
-        int status,String correo, int idEmpresa, String contrasenia) {
+    public String actualizaEmpresa(String empresa, String rfc, String razonSocial,
+            int status, String correo, int idEmpresa, String contrasenia) {
         Connection Cn = getConexion();
         CallableStatement ps = null;
         ResultSet rs = null;
@@ -133,9 +132,7 @@ public String actualizaEmpresa(String empresa, String rfc, String razonSocial,
                 rs = ps.getResultSet();
 
                 while (rs.next()) {
-                    respuesta=rs.getString("resp");
-                 
-                   
+                    respuesta = rs.getString("resp");
 
                 }
             } catch (Exception e) {
@@ -200,7 +197,6 @@ public String actualizaEmpresa(String empresa, String rfc, String razonSocial,
 //        }
 //        return registro;
 //    }
-
     public List<EmpresaDto> consultaEmpresa(int idEmpresa, int bnd) {
         List<EmpresaDto> lstEmpresa = new ArrayList<EmpresaDto>();
         Connection Cn = getConexion();
@@ -251,6 +247,51 @@ public String actualizaEmpresa(String empresa, String rfc, String razonSocial,
             }
         }
         return lstEmpresa;
+
+    }
+
+    public Usuario getPw(int idEmpresa) {
+
+        Usuario objUsuario = new Usuario();
+        Connection Cn = getConexion();
+        CallableStatement ps = null;
+        ResultSet rs = null;
+        try {
+            String squl = "select correo,pw from usuario where idEmpresa=?";
+            ps = Cn.prepareCall(squl);
+            ps.setInt(1, idEmpresa);
+
+            try {
+                ps.execute();
+                rs = ps.getResultSet();
+
+                while (rs.next()) {
+                    objUsuario.setCorreo(rs.getString("correo"));
+                    objUsuario.setPw(rs.getString("pw"));
+
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        } catch (SQLException e) {
+
+        } finally {
+            try {
+                Cn.close();
+                if (ps != null) {
+                    ps.close();
+                }
+
+                if (rs != null) {
+                    rs.close();
+                }
+
+            } catch (SQLException ex) {
+                Logger.getLogger(ControlAccesoDao.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return objUsuario;
 
     }
 
