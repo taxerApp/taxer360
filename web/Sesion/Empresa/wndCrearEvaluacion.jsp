@@ -41,6 +41,7 @@
     <body>
         <input typetype="text" id="txtIdEmpresaCEvaluacion" value="<%=id%>" hidden="">
          <div class="dvContEvaluacion">
+             <div class="dvProgresoCEvaluyacion"><label  class="lblProgresoCEvaluacion">Paso 1 de 4</label></div>
          <table id="tblEditaEmpresa" class="table">
              <tr class="fila">
                     <td class="celda">
@@ -80,11 +81,21 @@
     </div>
         
         <div id="dvRCompetencias" class="dvContEvaluacion">
-            <!--%@include file="../../Sesion/Empresa/wndRegistrarCompetencia.jsp?idEmpresa="=id %>-->
-             </div>
+ 
+        </div>
         
          <div id="dvPonderacion" class="dvContEvaluacion" >
-             <%--<%@include file="../../Sesion/Empresa/wndPonderacion.jsp?idEmpresa="=id %>--%>
         </div>
+        
+          <div id="dvRegistrarColaboradores" class="dvContEvaluacion" >
+
+          </div>
+          
+         <div  class="dvBtnCancelaEvaluacion">
+             <center>
+                <input type="button" id="btnCerrarWndEvaluacion" class="btnCreaEvaluacion" value="Cancelar"> 
+             </center>
+              
+         </div>
     </body>
 </html>

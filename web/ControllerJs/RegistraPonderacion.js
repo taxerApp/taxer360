@@ -55,16 +55,19 @@ function guardarPonderacion() {
                     if (data === 'true') {
                         alertify.success("Competencias Registradas Exitosamente");
                         $("#btnRegistraPonderacion").show();
+                        $("#btnRegistraPonderacion").prop("disabled", true);
                         $(".campoInputPorcenPonde").each(function () {
 
                             $(this).prop("disabled", true);
 
                         });
-//                    $("#btnRegistraPonderacion").prop("disabled", true);
                         $("#overlay").fadeOut();
-                        $("#wndCreaEvaluacion").dialog("close");
-                        $("#dvContenedorSesion").load('Sesion/Colaboradores/frmRegistrarColaboradores.jsp?id=' + idEmpresa);
+//                        $("#wndCreaEvaluacion").dialog("close");
+//                        $("#dvContenedorSesion").load('Sesion/Colaboradores/frmRegistrarColaboradores.jsp?id=' + idEmpresa);
 
+                       $("#dvRegistrarColaboradores").load('Sesion/Colaboradores/frmRegistrarColaboradores.jsp?id=' + idEmpresa);
+
+                       $("#dvRegistrarColaboradores").show();
 
                     } else {
                         alertify.error(data);

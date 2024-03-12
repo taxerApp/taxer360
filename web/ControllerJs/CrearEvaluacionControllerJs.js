@@ -124,3 +124,19 @@ function consultaInicialVerEvaluaciones(idEmpresa) {
         }
     });
 }
+
+$(document).on("click", "#btnCerrarWndEvaluacion", function (e) {
+
+    alertify.confirm('Cancelar Proceso', '¿Deseas cancelar el proceso de creación de evaluación?<br>\n\
+   Al dar clic en Aceptar, no se guardará la información previamente ingresada.',
+            function () {
+//     alertify.success('Aceptar') ;
+                $('#wndCreaEvaluacion').dialog('close');
+
+            },
+            function () {
+//     alertify.error('Cancelar');
+            }).set('labels', {ok: 'Aceptar', cancel: 'Cancelar'});
+    ;
+
+});

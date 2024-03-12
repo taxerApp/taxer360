@@ -10,10 +10,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link href="<%= request.getContextPath()  %>/css/CargarColaboradores.css" rel="stylesheet" type="text/css"/>
     </head>
     <script>
         $(document).ready(function () {
-          
+
             $("#btnSmt").val("Cargar Excel");
 
             $("#formSubirExcel").submit(function (e) {
@@ -36,7 +37,7 @@
                             alert("El archivo no puede pesar más de 1 MB");
                         } else {
                             $("#contentTablaColab").html(data);
-                            
+
                             // tabla Colaborador
                             $("#tblColaboradoresContent").dataTable().fnDestroy();
 
@@ -48,7 +49,7 @@
                                 "bFilter": false,
                                 "searching": true,
                                 "bSort": true,
-                                "lengthMenu": [[3,5,10, 25, 50, 100, -1], [3,5,10, 25, 50, 100, "Todos"]],
+                                "lengthMenu": [[3, 5, 10, 25, 50, 100, -1], [3, 5, 10, 25, 50, 100, "Todos"]],
                                 "bAutoWidth": true,
 
                                 language: {
@@ -65,16 +66,16 @@
                                 "bFilter": false,
                                 "searching": true,
                                 "bSort": true,
-                                "lengthMenu": [[3,5,10, 25, 50, 100, -1], [3,5,10, 25, 50, 100, "Todos"]],
+                                "lengthMenu": [[3, 5, 10, 25, 50, 100, -1], [3, 5, 10, 25, 50, 100, "Todos"]],
                                 "bAutoWidth": true,
 
                                 language: {
                                     url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/es-ES.json',
                                 }
                             });
-                           
-            
-                                        // tabla Ponderacion
+
+
+                            // tabla Ponderacion
                             $("#tblPonderacionContent").dataTable().fnDestroy();
 
 
@@ -85,7 +86,7 @@
                                 "bFilter": false,
                                 "searching": true,
                                 "bSort": true,
-                                "lengthMenu": [[3,5,10, 25, 50, 100, -1], [3,5,10, 25, 50, 100, "Todos"]],
+                                "lengthMenu": [[3, 5, 10, 25, 50, 100, -1], [3, 5, 10, 25, 50, 100, "Todos"]],
                                 "bAutoWidth": true,
 
                                 language: {
@@ -106,18 +107,27 @@
     </script>
 
     <body>
-         <div id="overlay">
+        <div id="overlay">
             <div class="cv-spinner"><label>Espera un momento ...<br></label> 
                 <span class="spinner"></span>
             </div>
-         </div><br><br>
-        <form id="formSubirExcel" enctype="multipart/form-data" method="post" action="">
-           
-            <input type="file" class="upload-input" name="upload-new-input" autocomplete="off"  data-max-size="2048" />
-            <br><br>
-            <input type="submit" name="submit" value="Subir" id="btnSmt" />
-        </form>
+        </div><br><br>
 
+                   <div class="dvProgresoCEvaluyacion"><label  class="lblProgresoCEvaluacion">Paso 4 de 4</label></div>
+
+            <form id="formSubirExcel" enctype="multipart/form-data" method="post" action="">
+                <div style=" width: 60%; float: left;">
+                
+                <input type="file" class="upload-input" name="upload-new-input" autocomplete="off"  data-max-size="2048" />
+                </div>
+                <div style=" width: 30%; float: left;">
+              
+                <input type="submit" name="submit" value="Subir" id="btnSmt" />
+             </div>
+            </form>  
+       
+
+        <br><br>
         <div id="contentTablaColab" ></div>
     </body>
 </html>

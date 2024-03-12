@@ -144,8 +144,8 @@ public class CtrlEmpresa extends HttpServlet {
 //        String empresa, String rfc, String razonSocial,
 //        int status,String correo, int idEmpresa, String contrasenia
         String respuesta = dao.actualizaEmpresa(empresa, rfc, razonSocial, status, correo, id,contrasenia);
-        System.out.println("respuesta "+respuesta);
-        if(!respuesta.equalsIgnoreCase("La empresa se editó parcialmente con exito.")){
+        System.out.println("respuesta "+respuesta); 
+        if(respuesta.equalsIgnoreCase("La empresa se editó exitosamente.")){
                enviaCorreo(correo,contrasenia,2);
         }
      

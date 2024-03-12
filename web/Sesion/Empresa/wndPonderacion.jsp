@@ -17,7 +17,11 @@
             int id = Integer.parseInt(request.getParameter("idEmpresa"));
         %>
     <body>
-                <div style="width: 100%; background:  #e5e5e5  ; color: var(--amarilloBackground); font-family: 'Antonio-Bold'; " ><label>Registrar Ponderaciones:</label></div>
+         <div class="dvProgresoCEvaluyacion"><label  class="lblProgresoCEvaluacion">Paso 3 de 4</label></div>
+                <div style="width: 100%; background:  #e5e5e5  ; color: var(--amarilloBackground); font-family: 'Antonio-Bold'; " >
+                                
+
+                                 <label>Registrar Ponderaciones:</label></div>
  <input type="text" value="<%=id%>" id="txtIdEmpresaRePonderacion" hidden="">
                 <table class="table" id="tblPonderacion">
         

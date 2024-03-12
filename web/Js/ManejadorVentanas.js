@@ -130,12 +130,7 @@ function wndPRueba() {
 
 $(document).on("click", "#frmCerrarSesion", function (e) {
 
-    cerrarSesion();
-
-});
-
-function cerrarSesion() {
-    $.ajax({
+ $.ajax({
         type: 'POST',
         url: 'CtrlLogin',
         data: {
@@ -149,7 +144,9 @@ function cerrarSesion() {
 
         }
     });
-}
+
+});
+
 
 //ventana CargarCuestionarios
 function verEvaluaciones(idEmpresa) {
@@ -197,6 +194,8 @@ function wndConsultarColaboradores(id, empresa) {
 function wndCreaEvaluacion(id, empresa) {
     cancelarEditaEmpresa();
     $("#overlay").fadeIn();
+
+    
     $("#wndCreaEvaluacion").dialog({
         width: '40%',
         height: 400,
@@ -210,10 +209,12 @@ function wndCreaEvaluacion(id, empresa) {
         open: function (event, ui) {
             $('#wndCreaEvaluacion').load("Sesion/Empresa/wndCrearEvaluacion.jsp?id=" + id + "&&empresa=" + empresa.replaceAll(" ", "|"), function () {
                 // Esta función se ejecuta cuando se termina de cargar la modal
+                $(".ui-dialog-titlebar-close").prop('disabled', true);
                 $("#overlay").fadeOut();
             });
         },
-        close: function () {}
+        
+        close: function () {/*aqui va a ir el evento de eliminar proceso*/}
     });
 }
 

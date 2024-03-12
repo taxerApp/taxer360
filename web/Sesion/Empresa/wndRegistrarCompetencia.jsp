@@ -10,72 +10,76 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <link href="<%= request.getContextPath() %>/css/Competencia.css" rel="stylesheet" type="text/css"/>
-        
-            <%
+        <link href="<%= request.getContextPath()%>/css/Competencia.css" rel="stylesheet" type="text/css"/>
+
+        <%
             int id = Integer.parseInt(request.getParameter("idEmpresa"));
         %>
     </head>
     <body>
         <input type="text" value="<%=id%>" id="txtIdEmpresaReCompetencia" hidden="">
-        <div style="width: 100%; background:  #e5e5e5  ; color: var(--amarilloBackground); font-family: 'Antonio-Bold'; " ><label>Registrar Competencias</label></div>
-    <table id="tblCompetencia" class="table">
-        <%
-        for(int i=1;i<=7;i++){%>
-              <tr class="fila">
-                   <td class="celda">
-                      <label class="etqForm">Competencia <%=i%>:</label> <br> 
-                      <input type="text" id="txtCompetencia<%=i%>"  class="campoInputTextCompetencia">  
-                   </td>
-               </tr>
-        <%}%>
-        
-             
-               
-<!--                <tr class="fila">
-                   <td class="celda">
-                      <label class="etqForm">Competencia 2:</label> <br> 
-                      <input type="text" id="txtCompetencia2"  class="campoInputTextCompetencia">  
-                   </td>
-               </tr>
-               
-                <tr class="fila">
-                   <td class="celda">
-                      <label class="etqForm">Competencia 3:</label> <br> 
-                      <input type="text" id="txtCompetencia3"  class="campoInputTextCompetencia">  
-                   </td>
-               </tr>
-               
-                <tr class="fila">
-                   <td class="celda">
-                      <label class="etqForm">Competencia 4:</label> <br> 
-                      <input type="text" id="txtCompetencia4"  class="campoInputTextCompetencia">  
-                   </td>
-               </tr>
-               
-               <tr class="fila">
-                   <td class="celda">
-                      <label class="etqForm">Competencia 5:</label> <br> 
-                      <input type="text" id="txtCompetencia5"  class="campoInputTextCompetencia">  
-                   </td>
-               </tr> 
-               
-               <tr class="fila">
-                   <td class="celda">
-                      <label class="etqForm">Competencia 6:</label> <br> 
-                      <input type="text" id="txtCompetencia6"  class="campoInputTextCompetencia">  
-                   </td>
-               </tr>
-                <tr class="fila">
-                   <td class="celda">
-                      <label class="etqForm">Competencia 7:</label> <br> 
-                      <input type="text" id="txtCompetencia7"  class="campoInputTextCompetencia">  
-                   </td>
-               </tr>
-              -->
-           </table>
-            <div id="dvBotones-Competencia" class="dvBtnAgregarQuitarCompetencia">
+         <div class="dvProgresoCEvaluyacion"><label  class="lblProgresoCEvaluacion">Paso 2 de 4</label></div>
+        <div style="width: 100%; background:  #e5e5e5  ; color: var(--amarilloBackground); font-family: 'Antonio-Bold'; " >
+           
+
+            <label>Registrar Competencias</label></div>
+        <table id="tblCompetencia" class="table">
+            <%
+            for (int i = 1; i <= 7; i++) {%>
+            <tr class="fila">
+                <td class="celda">
+                    <label class="etqForm">Competencia <%=i%>:</label> <br> 
+                    <input type="text" id="txtCompetencia<%=i%>"  class="campoInputTextCompetencia">  
+                </td>
+            </tr>
+            <%}%>
+
+
+
+            <!--                <tr class="fila">
+                               <td class="celda">
+                                  <label class="etqForm">Competencia 2:</label> <br> 
+                                  <input type="text" id="txtCompetencia2"  class="campoInputTextCompetencia">  
+                               </td>
+                           </tr>
+                           
+                            <tr class="fila">
+                               <td class="celda">
+                                  <label class="etqForm">Competencia 3:</label> <br> 
+                                  <input type="text" id="txtCompetencia3"  class="campoInputTextCompetencia">  
+                               </td>
+                           </tr>
+                           
+                            <tr class="fila">
+                               <td class="celda">
+                                  <label class="etqForm">Competencia 4:</label> <br> 
+                                  <input type="text" id="txtCompetencia4"  class="campoInputTextCompetencia">  
+                               </td>
+                           </tr>
+                           
+                           <tr class="fila">
+                               <td class="celda">
+                                  <label class="etqForm">Competencia 5:</label> <br> 
+                                  <input type="text" id="txtCompetencia5"  class="campoInputTextCompetencia">  
+                               </td>
+                           </tr> 
+                           
+                           <tr class="fila">
+                               <td class="celda">
+                                  <label class="etqForm">Competencia 6:</label> <br> 
+                                  <input type="text" id="txtCompetencia6"  class="campoInputTextCompetencia">  
+                               </td>
+                           </tr>
+                            <tr class="fila">
+                               <td class="celda">
+                                  <label class="etqForm">Competencia 7:</label> <br> 
+                                  <input type="text" id="txtCompetencia7"  class="campoInputTextCompetencia">  
+                               </td>
+                           </tr>
+            -->
+        </table>
+        <div id="dvBotones-Competencia" class="dvBtnAgregarQuitarCompetencia">
             <input type="button" value="Guardar" id="btnGuardarCompetencias" class="btnCreaEvaluacion"  onclick="guardarCompetencia()"></div>
-      
+
     </body>
 </html>

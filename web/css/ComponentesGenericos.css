@@ -45,11 +45,25 @@ and open the template in the editor.
     text-decoration: underline;
     color: var(--amarilloBackground);
     padding-left: 1%;
-    font-size: .8rem;
+    font-size: .7rem;
 }
 
 .mayorq{
     color: var(--amarilloBackground);
     margin-left: 1%;
-     font-size: .8rem;
+     font-size: .7rem;
+}
+
+.dvProgresoCEvaluyacion{
+    background: var(--colorFondoForm);
+    color: var(--amarilloBackground);
+    margin-left: 1%;
+     font-size: .7rem;
+}
+
+.lblProgresoCEvaluacion{
+    color: var(--amarilloBackground);
+    margin-left: 1%;
+     font-family: 'Antonio-Bold';
+     font-size: .7rem;
 }

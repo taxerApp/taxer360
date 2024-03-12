@@ -6,7 +6,7 @@
 
 
 $(document).ready(function () {
-alert(); 
+//alert(); 
 });
 
 $(document).on("click", "#btnCrearEvaluacion", function (e) {
@@ -34,10 +34,7 @@ alert();
 
                 if (data === 'La empresa se registro exitosamente.') {
                     alertify.success("La evaluación se registró exitosamente.");
-//                        alert("La empresa se registró exitosamente.")
-//                    if (window.location = "Sesion.jsp") {
-//
-//                    }
+
 
                     $("#txtPeriodo").prop('disabled', true);
                     $("#fInicioEvaluacion").prop('disabled', true);
@@ -53,7 +50,6 @@ alert();
 
                 } else {
                     alertify.error(data);
-//                        alert("Ocurrió un error en el registro.");
                     $("#overlay").fadeOut();
                 }
 
@@ -61,8 +57,7 @@ alert();
             },
             error: function (data) {
                 $("#overlay").fadeOut();
-                //   mensajeError(data)
-//                    $("#overlay").fadeOut();
+  
             }
         });
     }
