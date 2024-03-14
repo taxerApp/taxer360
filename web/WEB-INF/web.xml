@@ -36,6 +36,10 @@
         <servlet-name>CtrlArbolNavegacion</servlet-name>
         <servlet-class>Controller.CtrlArbolNavegacion</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CtrlLeerCuestionario</servlet-name>
+        <servlet-class>Controller.CtrlLeerCuestionario</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CtrlLogin</servlet-name>
         <url-pattern>/CtrlLogin</url-pattern>
@@ -71,6 +75,10 @@
     <servlet-mapping>
         <servlet-name>CtrlArbolNavegacion</servlet-name>
         <url-pattern>/CtrlArbolNavegacion</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CtrlLeerCuestionario</servlet-name>
+        <url-pattern>/CtrlLeerCuestionario</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

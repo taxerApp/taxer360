@@ -94,6 +94,7 @@ public class CtrlCuestionario extends HttpServlet {
         List<CompetenciaDto> lstCompetencias = dao.consultaCompetencias(idEvaluacion);
 
         for (int nc = 0; nc < lstNivelCompetencia.size(); nc++) {
+            lstNivelCompetencia.get(nc).getId();
             respuesta += " <div class=\"title-tab\"><i class=\"fa fa-1x\"></i>" + lstNivelCompetencia.get(nc).getNivel() + "</div> "
                     + "<div class=\"content-tab\">";
             respuesta += " <table class=\"tblCargarCuestionario\">\n"
@@ -101,6 +102,7 @@ public class CtrlCuestionario extends HttpServlet {
                     + "                            <th> <label class=\"lblTituloTablaCuestionario\">Competencia</label></th>   <th> <label class=\"lblTituloTablaCuestionario\">Cargar/ Visualizar</label></th> <th> <label class=\"lblTituloTablaCuestionario\">Estatus</label></th>\n"
                     + "                        </tr>";
             for (int c = 0; c < lstCompetencias.size(); c++) {
+                lstCompetencias.get(c).getId();
                 List<CuestionarioDto> lstCuestionario = dao.consultaCuestionariosCargados(lstCompetencias.get(c).getId(), lstNivelCompetencia.get(nc).getId());
                 respuesta += " <tr>\n"
                         + "                            <td>\n"

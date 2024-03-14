@@ -94,6 +94,7 @@
        
        <!--cuestionarios-->
        <script src="<%= request.getContextPath()  %>/ControllerJs/CuestionariosController.js" type="text/javascript"></script>
+       <script src="<%= request.getContextPath()  %>/ControllerJs/CuestionarioDinamicoControllerJS.js" type="text/javascript"></script>
        <!--fin cuestionarios-->
        
        <!--arbolNavegacion-->
@@ -128,6 +129,7 @@
         <!--<div id="dvContenedorSesion"><@include file="Sesion/frmHome.jsp" %></div>-->
         <!--<div id="dvContenedorSesion"><@include file="Sesion/Evaluacion/frmCargarCuestionarios.jsp" %></div>-->
         <div id="dvContenedorSesion"></div>
+        <%@include file="Sesion/Evaluacion/frmCuestionarioDinamico.jsp" %>
     </body>
     </body>
     <%}%>
