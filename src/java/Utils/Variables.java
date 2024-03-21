@@ -11,11 +11,9 @@ package Utils;
  */
 public class Variables {
 
-//   public static String servidor="jdbc:mysql://localhost:3306/Cursos?useServerPrepStmts=true";
-//    public static String usuario="root";
-//    public static String password="";
+
     
-    public static String servidor="jdbc:mysql://198.244.159.88:3306/proyecto360?useServerPrepStmts=true";
-    public static String usuario="taxerApp";
-    public static String password="Taxer2003";
+    public static String servidor="";
+    public static String usuario="";
+    public static String password="";
 }
